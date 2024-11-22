@@ -66,6 +66,51 @@ span {
     color: #FF5733;
 }
 
+.navbar-brand {
+    letter-spacing: 3px;
+    transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+    /* Stronger text-shadow for better visibility of the glow */
+    text-shadow: 0 0 10px rgba(255, 87, 51, 1),
+        /* First layer with high opacity (vibrant orange) */
+        0 0 20px rgba(255, 87, 51, 0.8),
+        /* Second layer */
+        0 0 30px rgba(255, 87, 51, 0.6),
+        /* Third layer */
+        0 0 40px rgba(255, 87, 51, 0.4),
+        /* Fourth layer */
+        0 0 50px rgba(255, 87, 51, 0.2);
+    /* Fifth layer with lower opacity */
+    transform: scale(1.1);
+    /* Slightly scale the text on hover */
+    transition: text-shadow 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.nav-item {
+    transition: color 0.3s ease;
+}
+
+.nav-item:hover {
+    /* Stronger text-shadow for better visibility of the glow */
+    text-shadow: 0 0 10px rgba(255, 87, 51, 1),
+        /* First layer with high opacity (vibrant orange) */
+        0 0 20px rgba(255, 87, 51, 0.8),
+        /* Second layer */
+        0 0 30px rgba(255, 87, 51, 0.6),
+        /* Third layer */
+        0 0 40px rgba(255, 87, 51, 0.4),
+        /* Fourth layer */
+        0 0 50px rgba(255, 87, 51, 0.2);
+    /* Fifth layer with lower opacity */
+    transform: scale(1.1);
+    /* Slightly scale the text on hover */
+    transition: text-shadow 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
 .wrapper {
     display: flex;
     flex-direction: column;
@@ -89,6 +134,8 @@ footer {
 .social-icons i {
     font-size: 24px;
     margin: 0 15px;
+    padding: 5px;
+    margin: 1px;
 }
 
 .social {
@@ -96,5 +143,20 @@ footer {
 }
 
 .social-icons i:hover {
-    color: #007bff;
+    /* Stronger text-shadow for better visibility of the glow */
+    text-shadow: 0 0 10px rgba(255, 87, 51, 1),
+        /* First layer with high opacity (vibrant orange) */
+        0 0 20px rgba(255, 87, 51, 0.8),
+        /* Second layer */
+        0 0 30px rgba(255, 87, 51, 0.6),
+        /* Third layer */
+        0 0 40px rgba(255, 87, 51, 0.4),
+        /* Fourth layer */
+        0 0 50px rgba(255, 87, 51, 0.2);
+    /* Fifth layer with lower opacity */
+    transform: scale(1.1);
+    /* Slightly scale the text on hover */
+    transition: text-shadow 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
 }
