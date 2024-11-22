@@ -66,9 +66,12 @@ span {
     color: #FF5733;
 }
 
+
+
 .navbar-brand {
     letter-spacing: 3px;
     transition: color 0.3s ease;
+    margin-left: 15px;
 }
 
 .navbar-brand:hover {
