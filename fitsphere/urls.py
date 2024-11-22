@@ -21,5 +21,6 @@ from pt.views import pt
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('fitsphere/', pt, name='fitsphere'),  # 'fitsphere' is fine here
-    path('', pt, name='home')  # Optional root path
+    path('', pt, name='home'),
+    path('pt/', pt, name='pt'),  # Optional root path
 ]
