@@ -1,0 +1,35 @@
+html,
+body {
+    height: 100%;
+    /* Full height of the viewport */
+    margin: 0;
+    /* Remove default margin */
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    /* Ensure the wrapper fills the height of the viewport */
+}
+
+.content {
+    flex-grow: 1;
+    /* Allow content to take up remaining space */
+}
+
+footer {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.social-icons i {
+    font-size: 24px;
+    margin: 0 15px;
+    color: #333;
+}
+
+.social-icons i:hover {
+    color: #007bff;
+}

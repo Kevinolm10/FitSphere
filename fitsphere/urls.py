@@ -15,12 +15,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include  # include is used to include app-level URLs
 from pt.views import pt
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('fitsphere/', pt, name='fitsphere'),  # 'fitsphere' is fine here
-    path('', pt, name='home'),
-    path('pt/', pt, name='pt'),  # Optional root path
+    path('admin/', admin.site.urls),  # Admin URL
+    path('pt/', include('pt.urls')),  # Include URLs from the pt app
+    path('', pt, name='home'),  # Home page or base preview (renders base.html)
 ]
