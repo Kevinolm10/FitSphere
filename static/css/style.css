@@ -1,7 +1,7 @@
 /* Custom Scrollbar Styling */
 /* Style the scrollbar */
 ::-webkit-scrollbar {
-    width: 12px;
+    width: 6px;
     /* Set width of the scrollbar */
 }
 
@@ -41,6 +41,7 @@ body {
         serif;
     /* Body font */
     line-height: 1.6;
+    padding: 0;
 }
 
 h1,
@@ -123,7 +124,26 @@ span {
     /* Allow content to take up remaining space */
 }
 
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    text-align: center;
+    color: #f1f1f1;
+    background-color: rgba(128, 128, 128, 0.7) !important;
+    /* Ensures transparency */
+    border-radius: 10px;
+    z-index: 1;
+    backdrop-filter: blur(5px);
+    /* Optional blur effect */
+}
+
 footer {
+    margin-top: 0;
     background-color: #f8f9fa;
     padding: 20px 0;
     text-align: center;
