@@ -66,53 +66,62 @@ span {
     color: #FF5733;
 }
 
-
-
+/* Navbar brand styling */
 .navbar-brand {
     letter-spacing: 3px;
     transition: color 0.3s ease;
     margin-left: 15px;
 }
 
+/* Hover effect for the brand */
 .navbar-brand:hover {
-    /* Stronger text-shadow for better visibility of the glow */
     text-shadow: 0 0 10px rgba(255, 87, 51, 1),
-        /* First layer with high opacity (vibrant orange) */
         0 0 20px rgba(255, 87, 51, 0.8),
-        /* Second layer */
         0 0 30px rgba(255, 87, 51, 0.6),
-        /* Third layer */
         0 0 40px rgba(255, 87, 51, 0.4),
-        /* Fourth layer */
         0 0 50px rgba(255, 87, 51, 0.2);
-    /* Fifth layer with lower opacity */
     transform: scale(1.1);
-    /* Slightly scale the text on hover */
-    transition: text-shadow 0.3s ease,
-        color 0.3s ease,
-        transform 0.3s ease;
+    transition: text-shadow 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
+/* Default nav item styling */
 .nav-item {
     transition: color 0.3s ease;
 }
 
+/* Hover effect for nav items (links) */
 .nav-item:hover {
-    /* Stronger text-shadow for better visibility of the glow */
     text-shadow: 0 0 10px rgba(255, 87, 51, 1),
-        /* First layer with high opacity (vibrant orange) */
         0 0 20px rgba(255, 87, 51, 0.8),
-        /* Second layer */
         0 0 30px rgba(255, 87, 51, 0.6),
-        /* Third layer */
         0 0 40px rgba(255, 87, 51, 0.4),
-        /* Fourth layer */
         0 0 50px rgba(255, 87, 51, 0.2);
-    /* Fifth layer with lower opacity */
     transform: scale(1.1);
-    /* Slightly scale the text on hover */
     transition: text-shadow 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
+
+/* Active state for the nav link */
+.nav-link.active {
+    color: #FF5733 !important;
+    /* Active link color */
+    font-weight: bold;
+    /* Bold text for active link */
+    text-decoration: underline;
+    /* Underline (underscore) effect */
+    text-shadow: none;
+    /* Remove text-shadow for active link */
+}
+
+/* Ensure active link styles apply even when hovering */
+.nav-item.active:hover .nav-link {
+    text-decoration: underline;
+    /* Keep the underline */
+    text-shadow: none;
+    /* Remove shadow on hover for active link */
+    font-weight: bold;
+    /* Keep the bold text on hover */
+}
+
 
 .wrapper {
     display: flex;
