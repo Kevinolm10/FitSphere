@@ -166,17 +166,22 @@ span {
 }
 
 .btn {
-    background-color: #1ABC9C;
+    background-color: #FF5733;
 }
 
 .btn:hover {
-    background-color: #16a085;
-    text-shadow: 0 0 5px rgba(22, 160, 133, 0.9);
+    background-color: #FF5733;
+    box-shadow: 0 0 10px rgba(255, 87, 51, 1),
+        0 0 20px rgba(255, 87, 51, 0.8),
+        0 0 30px rgba(255, 87, 51, 0.6),
+        0 0 40px rgba(255, 87, 51, 0.4),
+        0 0 50px rgba(255, 87, 51, 0.2);
+    /* Glow effect around the button */
     transform: scale(1.1);
-    transition: text-shadow 0.3s ease,
-        color 0.3s ease,
-        transform 0.3s ease;
+    /* Slightly scale the button on hover */
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
+
 
 footer {
     margin-top: 0;
