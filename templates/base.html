@@ -27,7 +27,6 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-
             <!-- Title (Left side) -->
             <a class="navbar-brand" href="#"><span>Fit</span>Sphere</a>
 
@@ -41,21 +40,25 @@
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link {% if request.path == '/pt/' %}active{% endif %}"
+                            href="{% url 'index' %}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><span>Trainers</span></a>
+                        <a class="nav-link {% if request.path == '/trainers/' %}active{% endif %}"
+                            href="#"><span>Trainers</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link {% if request.path == '/about/' %}active{% endif %}" href="#">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><span>Sign up</span></a>
+                        <a class="nav-link {% if request.path == '/signup/' %}active{% endif %}" href="#"><span>Sign
+                                up</span></a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+
 
     <main>
         {% block content %}
