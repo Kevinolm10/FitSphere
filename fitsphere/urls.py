@@ -21,5 +21,6 @@ from pt.views import pt
 urlpatterns = [
     path('admin/', admin.site.urls),  # Admin URL
     path('pt/', include('pt.urls')),  # Include URLs from the pt app
-    path('', pt, name='home'),  # Home page or base preview (renders base.html)
+    path('', pt, name='home'),  # Home page (renders base.html)
+    path('trainers/', include('trainers.urls')),
 ]
