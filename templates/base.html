@@ -45,7 +45,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == '/trainers/' %}active{% endif %}"
-                            href="#"><span>Trainers</span></a>
+                            href="{% url 'trainers' %}"><span>Trainers</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == '/about/' %}active{% endif %}" href="#">About</a>
