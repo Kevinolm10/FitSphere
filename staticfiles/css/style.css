@@ -1,0 +1,232 @@
+/* Custom Scrollbar Styling */
+/* Style the scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+    /* Set width of the scrollbar */
+}
+
+/* Style the scrollbar track (background) */
+::-webkit-scrollbar-track {
+    background-color: #333;
+    /* Dark track background */
+    border-radius: 10px;
+    /* Optional rounded corners for the track */
+}
+
+/* Style the scrollbar thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+    background-color: #FF5733;
+    /* Vibrant orange color for the thumb */
+    border-radius: 10px;
+    /* Rounded corners for the thumb */
+}
+
+/* Style the thumb when hovered */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #e44d26;
+    /* Darker orange on hover */
+}
+
+/* Optional: Hide the scrollbar buttons (arrows) */
+::-webkit-scrollbar-button {
+    display: none;
+    /* Hide up/down arrows */
+}
+
+html,
+body {
+    margin: 0;
+    font-family: 'Lora',
+        serif;
+    /* Body font */
+    line-height: 1.6;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Oswald', sans-serif;
+    /* Heading font */
+    font-weight: 700;
+    /* Make the headings bold */
+    letter-spacing: 1px;
+    /* Optional: adds space between letters for a cleaner look */
+}
+
+p {
+    font-size: 16px;
+    /* Adjust size for body text */
+}
+
+span {
+    color: #FF5733;
+}
+
+/* Navbar brand styling */
+.navbar-brand {
+    letter-spacing: 3px;
+    transition: color 0.3s ease;
+    margin-left: 15px;
+}
+
+/* Hover effect for the brand */
+.navbar-brand:hover {
+    text-shadow: 0 0 10px rgba(255, 87, 51, 1),
+        0 0 20px rgba(255, 87, 51, 0.8),
+        0 0 30px rgba(255, 87, 51, 0.6),
+        0 0 40px rgba(255, 87, 51, 0.4),
+        0 0 50px rgba(255, 87, 51, 0.2);
+    transform: scale(1.1);
+    transition: text-shadow 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+/* Default nav item styling */
+.nav-item {
+    transition: color 0.3s ease;
+}
+
+/* Hover effect for nav items (links) */
+.nav-item:hover {
+    text-shadow: 0 0 10px rgba(255, 87, 51, 1),
+        0 0 20px rgba(255, 87, 51, 0.8),
+        0 0 30px rgba(255, 87, 51, 0.6),
+        0 0 40px rgba(255, 87, 51, 0.4),
+        0 0 50px rgba(255, 87, 51, 0.2);
+    transform: scale(1.1);
+    transition: text-shadow 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+/* Active state for the nav link */
+.nav-link.active {
+    color: #FF5733 !important;
+    /* Active link color */
+    font-weight: bold;
+    /* Bold text for active link */
+    text-decoration: underline;
+    /* Underline (underscore) effect */
+    text-shadow: none;
+    /* Remove text-shadow for active link */
+}
+
+/* Ensure active link styles apply even when hovering */
+.nav-item.active:hover .nav-link {
+    text-decoration: underline;
+    /* Keep the underline */
+    text-shadow: none;
+    /* Remove shadow on hover for active link */
+    font-weight: bold;
+    /* Keep the bold text on hover */
+}
+
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    /* Ensure the wrapper fills the height of the viewport */
+}
+
+.video-background {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 56px);
+    /* Full height of the viewport minus the height of the navbar */
+    overflow: hidden;
+    /* Prevent overflow if video is too large */
+}
+
+/* The video itself */
+.my-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensures the video covers the entire container without distortion */
+}
+
+
+.content {
+    flex-grow: 1;
+    /* Allow content to take up remaining space */
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    text-align: center;
+    color: #f1f1f1;
+    background-color: rgba(128, 128, 128, 0.7) !important;
+    /* Ensures transparency */
+    border-radius: 10px;
+    z-index: 1;
+    backdrop-filter: blur(5px);
+    /* Optional blur effect */
+}
+
+.btn {
+    background-color: #FF5733;
+}
+
+.btn:hover {
+    background-color: #FF5733;
+    box-shadow: 0 0 10px rgba(255, 87, 51, 1),
+        0 0 20px rgba(255, 87, 51, 0.8),
+        0 0 30px rgba(255, 87, 51, 0.6),
+        0 0 40px rgba(255, 87, 51, 0.4),
+        0 0 50px rgba(255, 87, 51, 0.2);
+    /* Glow effect around the button */
+    transform: scale(1.1);
+    /* Slightly scale the button on hover */
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+
+footer {
+    margin-top: 0;
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    /* Make sure footer stretches across the entire page */
+}
+
+.social-icons i {
+    font-size: 24px;
+    margin: 0 15px;
+    padding: 5px;
+    margin: 1px;
+}
+
+.social {
+    color: #FF5733;
+}
+
+.social-icons i:hover {
+    /* Stronger text-shadow for better visibility of the glow */
+    text-shadow: 0 0 10px rgba(255, 87, 51, 1),
+        /* First layer with high opacity (vibrant orange) */
+        0 0 20px rgba(255, 87, 51, 0.8),
+        /* Second layer */
+        0 0 30px rgba(255, 87, 51, 0.6),
+        /* Third layer */
+        0 0 40px rgba(255, 87, 51, 0.4),
+        /* Fourth layer */
+        0 0 50px rgba(255, 87, 51, 0.2);
+    /* Fifth layer with lower opacity */
+    transform: scale(1.1);
+    /* Slightly scale the text on hover */
+    transition: text-shadow 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
