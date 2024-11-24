@@ -191,6 +191,21 @@ span {
     transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
+.card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body .card-text {
+    order: 0;
+    /* Set default order for all .card-text elements */
+}
+
+.card-body .card-text strong {
+    order: -1;
+    /* Force the "Age:" text to display before the description */
+}
+
 
 footer {
     margin-top: 0;
