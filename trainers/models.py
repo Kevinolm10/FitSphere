@@ -4,7 +4,6 @@ from django.core.exceptions import ValidationError
 from cloudinary.models import CloudinaryField
 
 
-
 # Create your models here.
 
 # Custom validator for alphabetic characters only
@@ -21,6 +20,7 @@ class Trainer(models.Model):
     # Foreign Key to User model 
     user = models.OneToOneField('auth.User', on_delete=models.CASCADE)
 
+    featured_image = CloudinaryField('image', default='placeholder')
     # Fields with validation
     first_name = models.CharField(
         max_length=100,
