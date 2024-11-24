@@ -1,5 +1,44 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<!-- index.html content ends here -->
+
+<!-- Container for the trainers -->
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        {% if trainers|length == 1 %}
+        <!-- If there's only one trainer, center it -->
+        <div class="col-md-6 col-lg-4 text-center">
+            <!-- Display the single trainer's card -->
+            <div class="card">
+                <img src="{{ trainers.0.featured_image.url }}" class="card-img-top rounded-circle"
+                    alt="{{ trainers.0.first_name }} {{ trainers.0.last_name }}"
+                    style="width: 150px; height: 150px; object-fit: cover; margin: 0 auto;">
+                <div class="card-body">
+                    <h5 class="card-title">{{ trainers.0.first_name }} {{ trainers.0.last_name }}</h5>
+                    <p class="card-text"><strong>Age:</strong> {{ trainers.0.age }}</p>
+                    <p class="card-text">{{ trainers.0.description }}</p>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <!-- If there are multiple trainers, display them in rows -->
+        {% for trainer in trainers %}
+        <div class="col-md-4 col-lg-3 mb-4">
+            <!-- Display each trainer's card -->
+            <div class="card">
+                <img src="{{ trainer.featured_image.url }}" class="card-img-top rounded-circle"
+                    alt="{{ trainer.first_name }} {{ trainer.last_name }}"
+                    style="width: 150px; height: 150px; object-fit: cover; margin: 0 auto;">
+                <div class="card-body">
+                    <h5 class="card-title">{{ trainer.first_name }} {{ trainer.last_name }}</h5>
+                    <p class="card-text"><strong>Age:</strong> {{ trainer.age }}</p>
+                    <p class="card-text">{{ trainer.description }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+</div>
+
 {% endblock %}
