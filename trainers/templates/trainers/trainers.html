@@ -24,6 +24,13 @@
                     <h5 class="card-title">{{ trainers.0.first_name }} {{ trainers.0.last_name }}</h5>
                     <p class="card-text"><strong>Age:</strong> {{ trainers.0.age }}</p>
                     <p class="card-text">{{ trainers.0.description }}</p>
+                    <div class="intro-buttons">
+                        <a href="#leave-opinion" class="btn btn-primary">Leave Your Opinion</a>
+                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
+                            data-bs-target="#contactModal">
+                            Get in Touch
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -40,11 +47,36 @@
                     <h5 class="card-title">{{ trainer.first_name }} {{ trainer.last_name }}</h5>
                     <p class="card-text"><strong>Age:</strong> {{ trainer.age }}</p>
                     <p class="card-text">{{ trainer.description }}</p>
+                    <div class="intro-buttons">
+                        <a href="#leave-opinion" class="btn btn-primary">Leave Your Opinion</a>
+                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
+                            data-bs-target="#contactModal">
+                            Get in Touch
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
         {% endfor %}
         {% endif %}
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="contactModalLabel">Feature Coming Soon</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>We’re working on this feature and it will be available soon. Stay tuned!</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
     </div>
 </div>
 
