@@ -41,6 +41,12 @@ body {
     /* Body font */
     line-height: 1.6;
     padding: 0;
+    background-color: #333;
+}
+
+main {
+    min-height: 100vh;
+
 }
 
 h1,
@@ -150,10 +156,64 @@ span {
     /* Ensures the video covers the entire container without distortion */
 }
 
+/* Card Styling */
+.card {
+    border: none;
+    background-color: #FF5733;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+/* Card Hover Effect */
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Styling */
+.card-img-top {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 20px auto;
+    border: 5px solid #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Body */
+.card-body {
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/* Add some extra hover effects on the title */
+.card-body:hover .card-title {
+    color: #20B2AA;
+    cursor: pointer;
+}
+
+.image-pos {
+    padding: 0.5em;
+}
 
 .content {
     flex-grow: 1;
-    /* Allow content to take up remaining space */
 }
 
 .overlay {
@@ -244,4 +304,25 @@ footer {
     transition: text-shadow 0.3s ease,
         color 0.3s ease,
         transform 0.3s ease;
+}
+
+
+/* Responsive Design: Smaller Screens */
+@media (max-width: 767px) {
+    .card {
+        margin: 10px;
+        /* Ensure there's some space around the card on smaller screens */
+    }
+
+    .card-img-top {
+        width: 120px;
+        /* Adjust image size for smaller screens */
+        height: 120px;
+    }
+
+    .card-body {
+        padding: 15px;
+        /* Reduce padding for smaller screens */
+    }
+
 }
