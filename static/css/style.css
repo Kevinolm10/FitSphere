@@ -109,23 +109,16 @@ span {
 /* Active state for the nav link */
 .nav-link.active {
     color: #FF5733 !important;
-    /* Active link color */
     font-weight: bold;
-    /* Bold text for active link */
     text-decoration: underline;
-    /* Underline (underscore) effect */
     text-shadow: none;
-    /* Remove text-shadow for active link */
 }
 
 /* Ensure active link styles apply even when hovering */
 .nav-item.active:hover .nav-link {
     text-decoration: underline;
-    /* Keep the underline */
     text-shadow: none;
-    /* Remove shadow on hover for active link */
     font-weight: bold;
-    /* Keep the bold text on hover */
 }
 
 
@@ -133,16 +126,13 @@ span {
     display: flex;
     flex-direction: column;
     min-height: 100%;
-    /* Ensure the wrapper fills the height of the viewport */
 }
 
 .video-background {
     position: relative;
     width: 100%;
     height: calc(100vh - 56px);
-    /* Full height of the viewport minus the height of the navbar */
     overflow: hidden;
-    /* Prevent overflow if video is too large */
 }
 
 /* The video itself */
@@ -153,8 +143,39 @@ span {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* Ensures the video covers the entire container without distortion */
 }
+
+/* Trainer Intro Section */
+.trainer-intro {
+    background-color: #333;
+    padding: 40px 20px;
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.trainer-intro h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.trainer-intro p {
+    font-size: 1.125rem;
+    color: white;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Add a subtle hover effect for the text */
+.trainer-intro h2:hover {
+    color: #FF5733;
+    cursor: pointer;
+}
+
 
 /* Card Styling */
 .card {
@@ -227,11 +248,9 @@ span {
     text-align: center;
     color: #f1f1f1;
     background-color: rgba(128, 128, 128, 0.7) !important;
-    /* Ensures transparency */
     border-radius: 10px;
     z-index: 1;
     backdrop-filter: blur(5px);
-    /* Optional blur effect */
 }
 
 .btn {
@@ -245,9 +264,7 @@ span {
         0 0 30px rgba(255, 87, 51, 0.6),
         0 0 40px rgba(255, 87, 51, 0.4),
         0 0 50px rgba(255, 87, 51, 0.2);
-    /* Glow effect around the button */
     transform: scale(1.1);
-    /* Slightly scale the button on hover */
     transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
@@ -258,12 +275,10 @@ span {
 
 .card-body .card-text {
     order: 0;
-    /* Set default order for all .card-text elements */
 }
 
 .card-body .card-text strong {
     order: -1;
-    /* Force the "Age:" text to display before the description */
 }
 
 
@@ -273,7 +288,6 @@ footer {
     padding: 20px 0;
     text-align: center;
     width: 100%;
-    /* Make sure footer stretches across the entire page */
 }
 
 .social-icons i {
@@ -288,9 +302,7 @@ footer {
 }
 
 .social-icons i:hover {
-    /* Stronger text-shadow for better visibility of the glow */
     text-shadow: 0 0 10px rgba(255, 87, 51, 1),
-        /* First layer with high opacity (vibrant orange) */
         0 0 20px rgba(255, 87, 51, 0.8),
         /* Second layer */
         0 0 30px rgba(255, 87, 51, 0.6),
@@ -298,9 +310,7 @@ footer {
         0 0 40px rgba(255, 87, 51, 0.4),
         /* Fourth layer */
         0 0 50px rgba(255, 87, 51, 0.2);
-    /* Fifth layer with lower opacity */
     transform: scale(1.1);
-    /* Slightly scale the text on hover */
     transition: text-shadow 0.3s ease,
         color 0.3s ease,
         transform 0.3s ease;
@@ -311,18 +321,15 @@ footer {
 @media (max-width: 767px) {
     .card {
         margin: 10px;
-        /* Ensure there's some space around the card on smaller screens */
     }
 
     .card-img-top {
         width: 120px;
-        /* Adjust image size for smaller screens */
         height: 120px;
     }
 
     .card-body {
         padding: 15px;
-        /* Reduce padding for smaller screens */
     }
 
 }
