@@ -179,8 +179,8 @@ span {
 
 /* Card Styling */
 .card {
-    border: none;
-    background-color: #FF5733;
+    border: 1px solid #FF5733;
+    background-color: #333;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -212,6 +212,7 @@ span {
 }
 
 .card-title {
+    color: #fff;
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 10px;
@@ -251,6 +252,38 @@ span {
     border-radius: 10px;
     z-index: 1;
     backdrop-filter: blur(5px);
+}
+
+.intro-buttons .btn {
+    padding: 6px 15px;
+    font-size: 1.125rem;
+    text-transform: uppercase;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.intro-buttons .btn-primary {
+    background-color: #FF5733;
+    color: white;
+}
+
+.intro-buttons .btn-secondary {
+    background-color: #20B2AA;
+    color: white;
+    margin-top: 3px;
+}
+
+.intro-buttons .btn:hover {
+    transform: translateY(-5px);
+}
+
+.intro-buttons .btn-primary:hover {
+    background-color: #d04e2f;
+}
+
+.intro-buttons .btn-secondary:hover {
+    background-color: #1c8f74;
 }
 
 .btn {
@@ -332,4 +365,13 @@ footer {
         padding: 15px;
     }
 
+    .intro-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .intro-buttons .btn {
+        width: 100%;
+        padding: 12px 0;
+    }
 }
