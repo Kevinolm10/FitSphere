@@ -25,7 +25,7 @@
                     <p class="card-text"><strong>Age:</strong> {{ trainers.0.age }}</p>
                     <p class="card-text">{{ trainers.0.description }}</p>
                     <div class="intro-buttons">
-                        <a href="#leave-opinion" class="btn btn-primary">Leave Your Opinion</a>
+                        <a href="{% url 'trainer_profile' trainer.id %}" class="btn btn-primary">Leave Your Opinion</a>
                         <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
                             data-bs-target="#contactModal">
                             Get in Touch
@@ -48,7 +48,7 @@
                     <p class="card-text"><strong>Age:</strong> {{ trainer.age }}</p>
                     <p class="card-text">{{ trainer.description }}</p>
                     <div class="intro-buttons">
-                        <a href="#leave-opinion" class="btn btn-primary">Leave Your Opinion</a>
+                        <a href="{% url 'trainer_profile' trainer.id %}" class="btn btn-primary">Leave Your Opinion</a>
                         <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
                             data-bs-target="#contactModal">
                             Get in Touch
