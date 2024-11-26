@@ -41,3 +41,15 @@ class Trainer(models.Model):
 
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
+
+
+class TrainerFeedback(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    trainer = models.ForeignKey(Trainer, on_delete=models.CASCADE, related_name="feedbacks")
+    rating = models.FloatField()
+    comment = models.TextField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"Feedback from {self.user.username} for {self.trainer.first_name} {self.trainer.last_name}"
