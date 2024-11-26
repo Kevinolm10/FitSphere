@@ -1,4 +1,21 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
+<!-- Full Trainer Profile Page -->
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12 text-center">
+            <img src="{{ trainer.featured_image.url }}" class="profile-image"
+                alt="{{ trainer.first_name }} {{ trainer.last_name }}">
+            <h2 class="mt-3">{{ trainer.first_name }} {{ trainer.last_name }}</h2>
+            <p><strong>Age:</strong> {{ trainer.age }}</p>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-12">
+            <h3>About {{ trainer.first_name }}:</h3>
+            <p>{{ trainer.description }}</p>
+        </div>
+    </div>
+</div>
 {% endblock %}
