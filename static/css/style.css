@@ -221,7 +221,6 @@ span {
 /* Add some extra hover effects on the title */
 .card-body:hover .card-title {
     color: #20B2AA;
-    cursor: pointer;
 }
 
 .image-pos {
