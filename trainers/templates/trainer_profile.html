@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+
 {% block content %}
 <!-- Full Trainer Profile Page -->
 <div class="container mt-5">
@@ -9,13 +10,41 @@
                 alt="{{ trainer.first_name }} {{ trainer.last_name }}">
             <h2 class="mt-3">{{ trainer.first_name }} {{ trainer.last_name }}</h2>
             <p><strong>Age:</strong> {{ trainer.age }}</p>
+
+            <!-- Display the average rating stars -->
+            <div class="star-rating">
+                {% for i in stars_range %}
+                {% if i <= avg_rating %}
+                <img src="{% static 'images/star-full.png' %}" alt="Full Star">
+                {% elif i == avg_rating|add:0.5 %}
+                <img src="{% static 'images/star-half.png' %}" alt="Half Star">
+                {% else %}
+                <img src="{% static 'images/star-empty.png' %}" alt="Empty Star">
+                {% endif %}
+                {% endfor %}
+            </div>
         </div>
     </div>
+
     <div class="row mt-4">
         <div class="col-12">
             <h3>About {{ trainer.first_name }}:</h3>
             <p>{{ trainer.description }}</p>
         </div>
     </div>
+
+    <div class="row mt-4">
+        <div class="col-12">
+            <h3>Comments:</h3>
+            <!-- Loop through the feedbacks and display each comment -->
+            {% for feedback in feedbacks %}
+            <div class="feedback-item">
+                <p><strong>{{ feedback.user.username }}:</strong> {{ feedback.comment }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
 </div>
 {% endblock %}
