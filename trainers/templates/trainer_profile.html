@@ -9,7 +9,7 @@
             <img src="{{ trainer.featured_image.url }}" class="profile-image"
                 alt="{{ trainer.first_name }} {{ trainer.last_name }}">
             <h2 class="mt-3">{{ trainer.first_name }} {{ trainer.last_name }}</h2>
-            <p><strong>Age:</strong> {{ trainer.age }}</p>
+            <p class="age"><strong>Age:</strong> {{ trainer.age }}</p>
 
             <!-- Display the average rating stars -->
             <div class="star-rating">
@@ -27,19 +27,18 @@
     </div>
 </div>
 
-<div class="row mt-4">
-    <div class="col-12">
-        <h3>About {{ trainer.first_name }}:</h3>
-        <p>{{ trainer.description }}</p>
-    </div>
+<div class="about-section">
+    <h3>About {{ trainer.first_name }}:</h3>
+    <p>{{ trainer.description }}</p>
 </div>
 
 <div class="row mt-4">
     <div class="col-12">
-        <h3>Comments:</h3>
+
         <!-- Loop through the feedbacks and display each comment -->
         {% for feedback in feedbacks %}
         <div class="feedback-item">
+            <h3>Comments:</h3>
             <p><strong>{{ feedback.user.username }}:</strong> {{ feedback.comment|safe }}</p>
         </div>
         {% endfor %}
