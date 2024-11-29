@@ -318,6 +318,16 @@ span {
     order: -1;
 }
 
+.feedback-item {
+    margin-bottom: 15px;
+
+}
+
+.feedback-item p {
+    margin: 0;
+
+}
+
 
 footer {
     margin-top: 0;
