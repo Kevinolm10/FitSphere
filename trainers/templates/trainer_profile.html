@@ -15,32 +15,32 @@
             <div class="star-rating">
                 {% for i in stars_range %}
                 {% if i <= avg_rating %}
-                <img src="{% static 'images/star-full.png' %}" alt="Full Star">
+                <span class="fa fa-star checked"></span> <!-- Full Star -->
                 {% elif i == avg_rating|add:0.5 %}
-                <img src="{% static 'images/star-half.png' %}" alt="Half Star">
+                <span class="fa fa-star-half-alt checked"></span> <!-- Half Star -->
                 {% else %}
-                <img src="{% static 'images/star-empty.png' %}" alt="Empty Star">
+                <span class="fa fa-star"></span> <!-- Empty Star -->
                 {% endif %}
                 {% endfor %}
             </div>
         </div>
     </div>
+</div>
 
-    <div class="row mt-4">
-        <div class="col-12">
-            <h3>About {{ trainer.first_name }}:</h3>
-            <p>{{ trainer.description }}</p>
-        </div>
+<div class="row mt-4">
+    <div class="col-12">
+        <h3>About {{ trainer.first_name }}:</h3>
+        <p>{{ trainer.description }}</p>
     </div>
+</div>
 
-    <div class="row mt-4">
-        <div class="col-12">
-            <h3>Comments:</h3>
-            <!-- Loop through the feedbacks and display each comment -->
-            {% for feedback in feedbacks %}
-            <div class="feedback-item">
-                <p><strong>{{ feedback.user.username }}:</strong> {{ feedback.comment }}</p>
-            </div>
+<div class="row mt-4">
+    <div class="col-12">
+        <h3>Comments:</h3>
+        <!-- Loop through the feedbacks and display each comment -->
+        {% for feedback in feedbacks %}
+        <div class="feedback-item">
+            <p><strong>{{ feedback.user.username }}:</strong> {{ feedback.comment|safe }}</p>
         </div>
         {% endfor %}
     </div>
