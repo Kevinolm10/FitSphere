@@ -367,9 +367,7 @@ span {
 
 .feedback-item:hover {
     background-color: #666;
-    /* Darker background on hover */
     transform: translateY(-5px);
-    /* Slight lift effect */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
