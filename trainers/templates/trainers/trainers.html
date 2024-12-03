@@ -25,7 +25,12 @@
                     <p class="card-text"><strong>Age:</strong> {{ trainers.0.age }}</p>
                     <p class="card-text">{{ trainers.0.description }}</p>
                     <div class="intro-buttons">
-                        <a href="{% url 'trainer_profile' trainer.id %}" class="btn btn-primary">Leave Your Opinion</a>
+                        {% if user.is_authenticated %}
+                        <!-- Show both buttons for authenticated users -->
+                        <a href="{% url 'trainer_profile' trainers.0.id %}" class="btn btn-primary">Leave Your
+                            Opinion</a>
+                        {% endif %}
+                        <!-- "Get in Touch" button is visible to everyone -->
                         <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
                             data-bs-target="#contactModal">
                             Get in Touch
@@ -48,7 +53,11 @@
                     <p class="card-text"><strong>Age:</strong> {{ trainer.age }}</p>
                     <p class="card-text">{{ trainer.description }}</p>
                     <div class="intro-buttons">
+                        {% if user.is_authenticated %}
+                        <!-- Show both buttons for authenticated users -->
                         <a href="{% url 'trainer_profile' trainer.id %}" class="btn btn-primary">Leave Your Opinion</a>
+                        {% endif %}
+                        <!-- "Get in Touch" button is visible to everyone -->
                         <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
                             data-bs-target="#contactModal">
                             Get in Touch
@@ -61,6 +70,7 @@
         {% endif %}
     </div>
 </div>
+
 
 <!-- Modal -->
 <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
