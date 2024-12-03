@@ -50,4 +50,34 @@
     </div>
 </div>
 
+<!-- Comment field, only visible if signed in -->
+{% if user.is_authenticated %}
+<form action="POST">
+    <div class="user-comment-box">
+        <h3>Leave your feedback!</h3>
+        <p>Writing your comment as <strong>{{ user.username }}</strong></p>
+        <textarea class="text-box" placeholder="Write your comment here..."></textarea>
+        <p>Leave a star review</p>
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="rating" class="form-label">Rating</label>
+            <select class="form-select" id="rating" name="rating" required>
+                <option value="1">1&nbsp;★</option>
+                <option value="2">2&nbsp;★</option>
+                <option value="3">3&nbsp;★</option>
+                <option value="4">4&nbsp;★</option>
+                <option value="5">5&nbsp;★</option>
+            </select>
+            <button class="form-btn" type="submit">
+                Submit
+            </button>
+        </div>
+    </div>
+
+</form>
+{% else %}
+<h3>Create an account or sign in to leave your feedback!</h3>
+{% endif %}
+
+
 {% endblock %}
