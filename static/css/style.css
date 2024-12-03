@@ -376,6 +376,100 @@ span {
     line-height: 1.6;
 }
 
+/* Styles for the comment box */
+.user-comment-box {
+    background-color: #444;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 800px;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    margin-left: auto;
+    margin-right: auto;
+
+    /* Centering content inside the box */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Horizontally center */
+    justify-content: center;
+    /* Vertically center */
+}
+
+/* Styles for the comment text input box */
+.text-box {
+    width: 100%;
+    padding: 15px;
+    margin-top: 10px;
+    background-color: #555;
+    border: 1px solid #666;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1rem;
+    line-height: 1.5;
+    resize: vertical;
+    min-height: 120px;
+    transition: border-color 0.3s ease;
+}
+
+.text-box:focus {
+    background-color: #555;
+    /* Lighter background when focused */
+    outline: none;
+}
+
+/* Rating dropdown */
+.form-group {
+    margin-top: 20px;
+}
+
+.form-label {
+    font-size: 1rem;
+    color: #bbb;
+    margin-bottom: 5px;
+}
+
+.form-select {
+    width: 100%;
+    padding: 10px;
+    background-color: #555;
+    border: 1px solid #666;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-select:focus {
+    outline: none;
+    border-color: #00bcd4;
+}
+
+/* Submit button */
+.form-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #00bcd4;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-btn:hover {
+    background-color: #0097a7;
+}
+
+.star-rating-label {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #bbb;
+}
 
 footer {
     margin-top: 0;
@@ -453,5 +547,9 @@ footer {
 
     h3 {
         font-size: 1.2rem;
+    }
+
+    .text-box {
+        height: 120px;
     }
 }
