@@ -1,15 +1,17 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<section class="video-background">
+<section class="video-background" role="region" aria-label="Video background showcasing fitness">
     <!-- Video Background -->
-    <video autoplay muted loop id="my-video">
+    <video autoplay muted loop id="my-video" aria-labelledby="video-description">
         <source src="{% static 'videos/jogging.mp4' %}" type="video/mp4">
-        Your browser does not support the video tag.
+        <p>Your browser does not support the video tag. Please consider updating your browser.</p>
     </video>
+
     <!-- Overlay content with Bootstrap classes -->
-    <div class="content position-absolute top-50 start-50 translate-middle overlay">
-        <h1><strong>Transform Your Fitness Journey</strong> with a Personal Trainer!</h1>
+    <div class="content position-absolute top-50 start-50 translate-middle overlay" role="contentinfo"
+        aria-labelledby="overlay-description">
+        <h1 id="overlay-description"><strong>Transform Your Fitness Journey</strong> with a Personal Trainer!</h1>
         <p>Ready to take your fitness to the next level? Sign up today and connect with a dedicated personal trainer who
             will help you achieve your goals, whether you're looking to lose weight, build muscle, or improve your
             overall health.</p>
@@ -19,7 +21,9 @@
         <p><strong>Start today and experience the difference a professional trainer can make in your fitness
                 journey!</strong></p>
         <p class="statement">Join Now – Take Control of Your Health and Fitness</p>
-        <a href="#" class="btn">Sign up now!</a>
+
+        <!-- Sign up button with aria-label -->
+        <a href="#" class="btn" aria-label="Sign up for personal training now">Sign up now!</a>
     </div>
-    <!-- index.html content ends here -->
-    {% endblock %}
+</section>
+{% endblock %}
