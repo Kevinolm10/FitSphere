@@ -13,14 +13,16 @@ def trainers(request):
 
 # View to display a specific trainer profile along with feedback
 def trainer_profile(request, trainer_id):
-    # Get the trainer by ID, or return a 404 if not found
     trainer = get_object_or_404(Trainer, id=trainer_id)
     
     # Get all feedbacks for the trainer
     feedbacks = TrainerFeedback.objects.filter(trainer=trainer)
 
-    # Calculate the average rating for the trainer
+    # Calculate the average rating for the trainer and round it to 1 decimal place
     avg_rating = trainer.get_average_rating()
+
+    # Round to 1 decimal place for easy template handling
+    avg_rating = round(avg_rating, 1)
 
     # Create a list of star numbers (for looping in the template)
     stars_range = range(1, 6)
@@ -30,5 +32,5 @@ def trainer_profile(request, trainer_id):
         'trainer': trainer,
         'feedbacks': feedbacks,
         'avg_rating': avg_rating,
-        'stars_range': stars_range,  # This will be passed to the template
+        'stars_range': stars_range,
     })
