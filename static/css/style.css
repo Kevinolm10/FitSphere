@@ -306,6 +306,27 @@ span {
     color: white;
 }
 
+.star-rating {
+    font-size: 1.5em;
+    /* Control the size of the stars */
+    color: #FF5733;
+    /* Default color for empty stars */
+}
+
+.star-rating .fa-star {
+    color: grey;
+}
+
+.star-rating .checked {
+    color: #FF5733;
+    /* Color for filled stars (yellow) */
+}
+
+.star-rating .fa-star-half-alt {
+    color: #FF5733;
+    /* Color for half-filled stars (yellow) */
+}
+
 /* About Section */
 .about-section {
     background-color: #444;
