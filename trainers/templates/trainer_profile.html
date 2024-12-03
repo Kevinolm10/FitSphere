@@ -38,9 +38,21 @@
         <h3 class="feedback-item comment-h3">Comments:</h3>
 
         {% if feedbacks %}
-        <!-- Loop through the feedbacks and display each comment -->
+        <!-- Loop through the feedbacks and display each comment and individual rating -->
         {% for feedback in feedbacks %}
         <div class="feedback-item">
+            <div class="star-rating" role="group" aria-labelledby="rating">
+                {% for i in stars_range %}
+                {% if i <= feedback.rating %}
+                <span class="fa fa-star checked" aria-label="full star" role="img"></span>
+                {% elif i == feedback.rating|add:0.5 %}
+                <span class="fa fa-star-half-alt checked" aria-label="half star" role="img"></span>
+                {% else %}
+                <span class="fa fa-star" aria-label="empty star" role="img"></span>
+                {% endif %}
+                {% endfor %}
+            </div>
+            <!-- Display the username and the comment -->
             <p><strong><span>{{ feedback.user.username }}:</span></strong> {{ feedback.comment|safe }}</p>
         </div>
         {% endfor %}
