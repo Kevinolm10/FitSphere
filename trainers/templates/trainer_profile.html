@@ -41,7 +41,7 @@
         <!-- Loop through the feedbacks and display each comment -->
         {% for feedback in feedbacks %}
         <div class="feedback-item">
-            <p><strong>{{ feedback.user.username }}:</strong> {{ feedback.comment|safe }}</p>
+            <p><strong><span>{{ feedback.user.username }}:</span></strong> {{ feedback.comment|safe }}</p>
         </div>
         {% endfor %}
         {% else %}
@@ -52,11 +52,11 @@
 
 <!-- Comment field, only visible if signed in -->
 {% if user.is_authenticated %}
-<form action="POST">
+<form action="{% url 'submit_feedback' trainer.id %}" method="POST">
     <div class="user-comment-box">
-        <h3>Leave your feedback!</h3>
+        <h3><span>Leave your feedback!</span></h3>
         <p>Writing your comment as <strong>{{ user.username }}</strong></p>
-        <textarea class="text-box" placeholder="Write your comment here..."></textarea>
+        <textarea class="text-box" name="comment" placeholder="Write your comment here..."></textarea>
         <p>Leave a star review</p>
         {% csrf_token %}
         <div class="mb-3">
@@ -73,11 +73,11 @@
             </button>
         </div>
     </div>
-
 </form>
 {% else %}
 <h3>Create an account or sign in to leave your feedback!</h3>
 {% endif %}
+
 
 
 {% endblock %}
