@@ -1,4 +1,6 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
+from django.http import HttpResponse
+from django.contrib import messages 
 from .models import Trainer, TrainerFeedback
 
 # Create your views here.
@@ -34,3 +36,38 @@ def trainer_profile(request, trainer_id):
         'avg_rating': avg_rating,
         'stars_range': stars_range,
     })
+
+def submit_feedback(request, trainer_id):
+    # Ensure the user is authenticated before allowing feedback submission
+    if not request.user.is_authenticated:
+        messages.error(request, "You must be logged in to leave feedback.")
+        return redirect('login')
+
+    trainer = get_object_or_404(Trainer, id=trainer_id)
+
+    if request.method == 'POST':
+        # Get the data from the form
+        rating = request.POST.get('rating')
+        comment = request.POST.get('comment')
+
+        # Make sure rating is valid
+        if rating not in ['1', '2', '3', '4', '5']:
+            messages.error(request, "Invalid rating. Please select a valid star rating.")
+            return redirect('trainer_profile', trainer_id=trainer.id)
+
+        # Create a new feedback object and save it
+        feedback = TrainerFeedback(
+            user=request.user,
+            trainer=trainer,
+            rating=int(rating),
+            comment=comment
+        )
+        feedback.save()
+
+        # Add a success message after feedback submission
+        messages.success(request, "Thank you for your feedback! It has been successfully submitted.")
+
+        # Redirect to the trainer profile page
+        return redirect('trainer_profile', trainer_id=trainer.id)
+
+    return render(request, 'trainer_profile.html', {'trainer': trainer})
