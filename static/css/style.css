@@ -261,7 +261,7 @@ span {
 }
 
 .intro-buttons .btn-secondary {
-    background-color: #20B2AA;
+    background-color: #1c8f74;
     color: white;
     margin-top: 3px;
 }
@@ -474,6 +474,116 @@ span {
     font-size: 1rem;
     color: #bbb;
 }
+
+/* Container for centering the content */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 0 20px;
+}
+
+/* The box that holds the form content */
+.auth-box {
+    background-color: #444;
+    padding: 30px 40px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Title styling */
+.auth-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #f0f0f0;
+}
+
+/* Error message styling */
+.error-message {
+    background-color: #ff4d4d;
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+/* Styling for form fields */
+.form-group {
+    margin-bottom: 15px;
+}
+
+form p {
+    margin: 10px 0;
+}
+
+/* Button styling */
+.btn-submit {
+    background-color: #1c8f74;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background-color: #0056b3;
+}
+
+/* Styling for the Sign Up and Social Login sections */
+.signup-text {
+    color: white;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.signup-text a {
+    color: #1c8f74;
+    text-decoration: none;
+}
+
+.signup-text a:hover {
+    text-decoration: underline;
+}
+
+/* Social login buttons */
+.social-login {
+    margin-top: 20px;
+}
+
+.social-login h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #ccc;
+}
+
+.social-login .socialaccount_form {
+    margin-top: 10px;
+}
+
+/* Forgot password link */
+.forgot-password {
+    color: #1c8f74;
+    margin-top: 15px;
+}
+
+.forgot-password a {
+    color: #1c8f74;
+    text-decoration: none;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
 
 footer {
     margin-top: 0;
