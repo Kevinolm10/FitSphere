@@ -55,7 +55,8 @@
                     <div class="intro-buttons">
                         {% if user.is_authenticated %}
                         <!-- Show both buttons for authenticated users -->
-                        <a href="{% url 'trainer_profile' trainer.id %}" class="btn btn-primary">Leave Your Opinion</a>
+                        <a href="{% url 'trainers:trainer_profile' trainer.id %}" class="btn btn-primary">Leave Your
+                            Opinion</a>
                         {% endif %}
                         <!-- "Get in Touch" button is visible to everyone -->
                         <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
