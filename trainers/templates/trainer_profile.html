@@ -64,7 +64,7 @@
 
 <!-- Comment field, only visible if signed in -->
 {% if user.is_authenticated %}
-<form action="{% url 'submit_feedback' trainer.id %}" method="POST">
+<form action="{% url 'trainers:submit_feedback' trainer.id %}" method="POST">
     <div class="user-comment-box">
         <h3><span>Leave your feedback!</span></h3>
         <p>Writing your comment as <strong>{{ user.username }}</strong></p>

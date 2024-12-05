@@ -68,6 +68,8 @@ def submit_feedback(request, trainer_id):
         messages.success(request, "Thank you for your feedback! It has been successfully submitted.")
 
         # Redirect to the trainer profile page
-        return redirect('trainer_profile', trainer_id=trainer.id)
+        return redirect('trainers:trainer_profile', trainer_id=trainer.id)
+    else:
+        form = FeedbackForm()
 
     return render(request, 'trainer_profile.html', {'trainer': trainer})
