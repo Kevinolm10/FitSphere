@@ -518,31 +518,20 @@ span {
 .auth-box input[type="email"],
 .auth-box input[type="checkbox"] {
     width: 100%;
-    /* Make inputs take full width of the container */
     padding: 10px;
-    /* Add padding inside inputs */
     margin: 10px 0;
-    /* Add margin between inputs */
     border-radius: 5px;
-    /* Round the corners of the inputs */
     border: 1px solid white;
-    /* White border for contrast */
     background-color: #333;
-    /* Dark background color for inputs */
     color: white;
-    /* White text color */
     font-size: 16px;
-    /* Font size for text */
 }
 
 /* Optional: Specific styles for the checkbox */
 .auth-box input[type="checkbox"] {
     width: auto;
-    /* Don't stretch checkbox to full width */
     display: inline-block;
-    /* Display checkbox inline */
     margin-right: 5px;
-    /* Add space between checkbox and label */
 }
 
 /* Focus styling to highlight the input field when active */
@@ -551,9 +540,7 @@ span {
 .auth-box input[type="email"]:focus,
 .auth-box input[type="checkbox"]:focus {
     border-color: #1c8f74;
-    /* Change border color to the primary green on focus */
     outline: none;
-    /* Remove default outline */
 }
 
 
@@ -613,17 +600,29 @@ span {
     font-size: 14px;
 }
 
-/* Style the password validation message list */
-.auth-box ul.password-help {
-    font-size: 14px;
-    color: #ff4d4d;
-    /* Red color for validation error text */
+/* Styling for the password rules */
+.form-group li {
     list-style-type: none;
-    /* Remove default list bullets */
-    padding-left: 20px;
-    /* Optional: add some padding for better alignment */
+    /* Remove default list markers */
+    padding-left: 0;
+    color: #fff;
+    /* White text color */
     margin-top: 10px;
 }
+
+/* Styling when the rule is met */
+.form-group li.valid {
+    color: #28a745;
+    /* Green */
+}
+
+/* Styling when the rule is not met */
+.form-group li.invalid {
+    color: #dc3545;
+    /* Red */
+}
+
+
 
 footer {
     margin-top: 0;
