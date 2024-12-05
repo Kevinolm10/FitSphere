@@ -475,7 +475,7 @@ span {
     color: #bbb;
 }
 
-/* Container for centering the content */
+/* General container for centering the content */
 .auth-container {
     display: flex;
     justify-content: center;
@@ -484,22 +484,23 @@ span {
     padding: 0 20px;
 }
 
-/* The box that holds the form content */
+/* The form box styling */
 .auth-box {
     background-color: #444;
-    padding: 30px 40px;
+    padding: 40px 50px;
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
     text-align: center;
+    min-height: 450px;
 }
 
-/* Title styling */
+/* Title inside the form */
 .auth-title {
     font-size: 24px;
     margin-bottom: 20px;
-    color: #f0f0f0;
+    color: white;
 }
 
 /* Error message styling */
@@ -507,83 +508,122 @@ span {
     background-color: #ff4d4d;
     padding: 10px;
     border-radius: 5px;
-    color: #fff;
+    color: white;
     margin-bottom: 20px;
 }
 
-/* Styling for form fields */
-.form-group {
-    margin-bottom: 15px;
-}
-
-form p {
+/* Style for all input fields inside .auth-box */
+.auth-box input[type="text"],
+.auth-box input[type="password"],
+.auth-box input[type="email"],
+.auth-box input[type="checkbox"] {
+    width: 100%;
+    /* Make inputs take full width of the container */
+    padding: 10px;
+    /* Add padding inside inputs */
     margin: 10px 0;
+    /* Add margin between inputs */
+    border-radius: 5px;
+    /* Round the corners of the inputs */
+    border: 1px solid white;
+    /* White border for contrast */
+    background-color: #333;
+    /* Dark background color for inputs */
+    color: white;
+    /* White text color */
+    font-size: 16px;
+    /* Font size for text */
 }
 
-/* Button styling */
+/* Optional: Specific styles for the checkbox */
+.auth-box input[type="checkbox"] {
+    width: auto;
+    /* Don't stretch checkbox to full width */
+    display: inline-block;
+    /* Display checkbox inline */
+    margin-right: 5px;
+    /* Add space between checkbox and label */
+}
+
+/* Focus styling to highlight the input field when active */
+.auth-box input[type="text"]:focus,
+.auth-box input[type="password"]:focus,
+.auth-box input[type="email"]:focus,
+.auth-box input[type="checkbox"]:focus {
+    border-color: #1c8f74;
+    /* Change border color to the primary green on focus */
+    outline: none;
+    /* Remove default outline */
+}
+
+
+/* Label styling */
+.auth-box label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: white;
+}
+
+/* Focus state for input fields */
+.auth-box input:focus {
+    border-color: #1c8f74;
+    outline: none;
+}
+
+/* Buttons */
 .btn-submit {
     background-color: #1c8f74;
     color: white;
-    padding: 10px 20px;
+    padding: 12px 20px;
     border: none;
     border-radius: 5px;
     width: 100%;
     cursor: pointer;
     font-size: 16px;
-    margin-top: 10px;
 }
 
 .btn-submit:hover {
-    background-color: #0056b3;
+    background-color: #177b62;
 }
 
-/* Styling for the Sign Up and Social Login sections */
-.signup-text {
-    color: white;
-    margin-top: 20px;
+/* "Remember Me" label styling */
+.remember-label {
     font-size: 14px;
-    color: #ccc;
+    color: white;
 }
 
+/* Forgot password and Sign Up links */
+
+.forgot-password,
 .signup-text a {
     color: #1c8f74;
     text-decoration: none;
 }
 
+.forgot-password a:hover,
 .signup-text a:hover {
+    color: #177b62;
     text-decoration: underline;
 }
 
-/* Social login buttons */
-.social-login {
+.signup-text {
+    color: white;
     margin-top: 20px;
+    font-size: 14px;
 }
 
-.social-login h3 {
-    font-size: 16px;
-    margin-bottom: 10px;
-    color: #ccc;
-}
-
-.social-login .socialaccount_form {
+/* Style the password validation message list */
+.auth-box ul.password-help {
+    font-size: 14px;
+    color: #ff4d4d;
+    /* Red color for validation error text */
+    list-style-type: none;
+    /* Remove default list bullets */
+    padding-left: 20px;
+    /* Optional: add some padding for better alignment */
     margin-top: 10px;
 }
-
-/* Forgot password link */
-.forgot-password {
-    color: #1c8f74;
-    margin-top: 15px;
-}
-
-.forgot-password a {
-    color: #1c8f74;
-    text-decoration: none;
-}
-
-.forgot-password a:hover {
-    text-decoration: underline;
-}
-
 
 footer {
     margin-top: 0;
