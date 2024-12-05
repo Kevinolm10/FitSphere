@@ -5,30 +5,30 @@
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
 {% block content %}
-<h2>{% trans "Log in" %}</h2>
+<div class="auth-container">
+    <div class="auth-box">
+        <h2 class="auth-title">{% trans "Log In" %}</h2>
 
-{% if form.errors %}
-<div class="errors">
-    {% for field in form %}
-    {% for error in field.errors %}
-    <p>{{ error }}</p>
-    {% endfor %}
-    {% endfor %}
-</div>
-{% endif %}
+        {% if form.errors %}
+        <div class="error-message">
+            {% for field in form %}
+            {% for error in field.errors %}
+            <p>{{ error }}</p>
+            {% endfor %}
+            {% endfor %}
+        </div>
+        {% endif %}
 
-<form method="post" action="{% url 'account_login' %}">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">{% trans "Log in" %}</button>
-</form>
+        <form method="post" action="{% url 'account_login' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.as_p }}
+            </div>
+            <button type="submit" class="btn-submit">{% trans "Log In" %}</button>
+        </form>
 
-<p>{% trans "Welcome back to Fitsphere! To leave feedback on our trainers, procced to log in here. If you do not have an account yet," %}
-    <a href="{% url 'account_signup' %}">{% trans "Sign up here" %}</a></p>
-
-{% if SOCIALACCOUNT_ENABLED %}
-{% include "socialaccount/snippets/login.html" %}
-{% endif %}
-
-<p><a href="{% url 'account_reset_password' %}">{% trans "Forgot your password?" %}</a></p>
-{% endblock %}
+        <p class="signup-text">
+            {% trans "Welcome back to Fitsphere! To leave feedback on our trainers, proceed to log in here. If you do not have an account yet," %}
+            <a href="{% url 'account_signup' %}">{% trans "Sign up here" %}</a>
+        </p>
+        {% endblock %}
