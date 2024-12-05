@@ -53,10 +53,14 @@
                 <!-- Navbar Links (Centering) -->
                 <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                     <ul class="navbar-nav">
+                        <!-- Show 'Home' link only when user is NOT authenticated -->
+                        {% if not user.is_authenticated %}
                         <li class="nav-item">
                             <a class="nav-link {% if request.path == '/pt/' %}active{% endif %}"
                                 href="{% url 'index' %}">Home</a>
                         </li>
+                        {% endif %}
+
                         <li class="nav-item">
                             <a class="nav-link {% if request.path == '/trainers/' %}active{% endif %}"
                                 href="{% url 'trainers' %}"><span>Trainers</span></a>
@@ -64,6 +68,7 @@
                         <li class="nav-item">
                             <a class="nav-link {% if request.path == '/about/' %}active{% endif %}" href="#">About</a>
                         </li>
+
                         {% if user.is_authenticated %}
                         <li class="nav-item">
                             <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
@@ -81,6 +86,7 @@
                         {% endif %}
                     </ul>
                 </div>
+
             </div>
         </nav>
     </header>
