@@ -622,6 +622,68 @@ span {
     /* Red */
 }
 
+/* Make the whole page take the full viewport height */
+.logout-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #333;
+    padding: 0 10px;
+    margin: 0;
+}
+
+/* Container for logout content */
+.logout-container {
+    background-color: #444;
+    /* Slightly lighter background for the container */
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Title Styling */
+.logout-title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #f1f1f1;
+}
+
+/* Message Styling */
+.logout-message {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: #ccc;
+}
+
+/* Button Styling */
+.logout-button {
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Button Hover Effect */
+.logout-button:hover {
+    background-color: #d32f2f;
+    transform: scale(1.05);
+}
+
+/* Button Focus Effect */
+.logout-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 87, 34, 0.5);
+}
+
 
 
 footer {
