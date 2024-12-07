@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
-from django.contrib import messages 
+from django.contrib import messages
 from .models import Trainer, TrainerFeedback
 
 # Create your views here.
@@ -16,7 +16,7 @@ def trainers(request):
 # View to display a specific trainer profile along with feedback
 def trainer_profile(request, trainer_id):
     trainer = get_object_or_404(Trainer, id=trainer_id)
-    
+
     # Get all feedbacks for the trainer
     feedbacks = TrainerFeedback.objects.filter(trainer=trainer)
 
