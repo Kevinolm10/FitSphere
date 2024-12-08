@@ -85,3 +85,10 @@ function toggleEditForm(feedbackId) {
         commentText.style.display = 'block'; // Show the comment text
     }
 }
+
+
+// You can implement the saveChanges function to handle saving the form if needed
+function saveChanges(feedbackId) {
+    var form = document.getElementById('edit-form-' + feedbackId);
+    form.submit(); // This will submit the form
+}
