@@ -100,7 +100,7 @@
             {% if feedback.user == user %}
             <div class="comment-actions">
                 <!-- Edit Button -->
-                <button class="btn btn-primary btn-sm" onclick="toggleEditForm({{ feedback.id }})">Edit</button>
+                <button class="btn btn-primary btn-sm" onclick="toggleEditForm('{{ feedback.id }}')">Edit</button>
 
                 <!-- Delete Button -->
                 <form action="{% url 'trainers:delete_feedback' feedback.id %}" method="POST" style="display:inline;">
