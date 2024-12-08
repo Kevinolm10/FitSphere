@@ -3,6 +3,7 @@ from django.contrib import messages
 from .models import Trainer, TrainerFeedback
 from .forms import TrainerFeedbackForm
 
+
 # View to display all trainers
 def trainers(request):
     # Query the database to get all trainers
@@ -11,9 +12,10 @@ def trainers(request):
     # Pass the trainers to the template as context
     return render(request, 'trainers/trainers.html', {'trainers': trainers})
 
+
 def trainer_profile(request, trainer_id):
     trainer = get_object_or_404(Trainer, id=trainer_id)
-    
+
     # Get feedbacks and average rating directly
     feedbacks = TrainerFeedback.objects.filter(trainer=trainer)
     avg_rating = trainer.get_average_rating()
@@ -25,6 +27,7 @@ def trainer_profile(request, trainer_id):
         'avg_rating': round(avg_rating, 1),  # Round to one decimal place
         'stars_range': range(1, 6)  # For star rating display
     })
+
 
 def submit_feedback(request, trainer_id):
     if not request.user.is_authenticated:
@@ -38,7 +41,9 @@ def submit_feedback(request, trainer_id):
         comment = request.POST.get('comment')
 
         if rating not in ['1', '2', '3', '4', '5']:
-            messages.error(request, "Invalid rating. Please select a valid star rating.")
+            messages.error(
+                request, "Invalid rating. Please select a valid star rating."
+            )
             return redirect('trainers:trainer_profile', trainer_id=trainer.id)
 
         TrainerFeedback.objects.create(
@@ -53,6 +58,7 @@ def submit_feedback(request, trainer_id):
 
     return redirect('trainers:trainer_profile', trainer_id=trainer.id)
 
+
 def edit_feedback(request, feedback_id):
     # Get the feedback object to be edited
     feedback = get_object_or_404(TrainerFeedback, id=feedback_id)
@@ -60,19 +66,21 @@ def edit_feedback(request, feedback_id):
 
     # Ensure the logged-in user is the owner of the feedback
     if request.user != feedback.user:
-        messages.error(request, "You do not have permission to edit this feedback.")
+        messages.error(request,
+"You do not have permission to edit this feedback.")
         return redirect('trainers:trainer_profile', trainer_id=trainer.id)
 
     # Process the form submission (POST request)
     if request.method == 'POST':
-        form = TrainerFeedbackForm(request.POST, instance=feedback)  # Populate form with existing data
+        form = TrainerFeedbackForm(request.POST, instance=feedback)
         if form.is_valid():
             form.save()  # Save the updated feedback
             messages.success(request, "Feedback updated successfully!")
             return redirect('trainers:trainer_profile', trainer_id=trainer.id)
         else:
             print(form.errors)  # Log form errors for debugging
-            messages.error(request, "There was an error updating your feedback.")
+            messages.error(request,
+"There was an error updating your feedback.")
             return redirect('trainers:trainer_profile', trainer_id=trainer.id)
 
     else:
@@ -83,7 +91,6 @@ def edit_feedback(request, feedback_id):
         'feedback': feedback,
         'trainer': trainer,
     })
-
 
 
 def delete_feedback(request, id):
