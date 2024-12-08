@@ -40,7 +40,7 @@
         {% if feedbacks %}
         <!-- Loop through the feedbacks and display each comment and individual rating -->
         {% for feedback in feedbacks %}
-        <div class="feedback-item">
+        <div class="feedback-item" id="feedback-{{ feedback.id }}">
             <div class="star-rating" role="group" aria-labelledby="rating">
                 {% for i in stars_range %}
                 {% if i <= feedback.rating %}
@@ -53,13 +53,26 @@
                 {% endfor %}
             </div>
             <!-- Display the username and the comment -->
-            <p><strong><span>{{ feedback.user.username }}:</span></strong> {{ feedback.comment|safe }}</p>
+            <p><strong><span>{{ feedback.user.username }}:</span></strong>
+                <span id="comment-text-{{ feedback.id }}">
+                    {{ feedback.comment|safe }}
+                </span>
+
+                <!-- Form to edit the comment -->
+                <form method="POST" action="{% url 'trainers:edit_feedback' feedback.id %}" style="display:none;"
+                    id="edit-form-{{ feedback.id }}">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </form>
+            </p>
 
             <!-- Add Edit and Delete buttons if the user is the owner of the comment -->
             {% if feedback.user == user %}
             <div class="comment-actions">
                 <!-- Edit Button -->
-                <a href="{% url 'trainers:edit_feedback' feedback.id %}" class="btn btn-primary btn-sm">Edit</a>
+                <button class="btn btn-primary btn-sm" onclick="toggleEditForm({{ feedback.id }})">Edit</button>
+
                 <!-- Delete Button -->
                 <form action="{% url 'trainers:delete_feedback' feedback.id %}" method="POST" style="display:inline;">
                     {% csrf_token %}
@@ -69,12 +82,13 @@
             {% endif %}
         </div>
         {% endfor %}
+        <!-- This is the correct closing tag for the 'for' loop -->
+
         {% else %}
         <p>No comments yet. Be the first to leave feedback!</p>
         {% endif %}
     </div>
 </div>
-
 
 
 <!-- Comment field, only visible if signed in -->
