@@ -41,6 +41,7 @@
         <!-- Loop through the feedbacks and display each comment and individual rating -->
         {% for feedback in feedbacks %}
         <div class="feedback-item" id="feedback-{{ feedback.id }}">
+            <!-- Star Rating Display -->
             <div class="star-rating" role="group" aria-labelledby="rating">
                 {% for i in stars_range %}
                 {% if i <= feedback.rating %}
@@ -52,18 +53,23 @@
                 {% endif %}
                 {% endfor %}
             </div>
+
             <!-- Display the username and the comment -->
             <p><strong><span>{{ feedback.user.username }}:</span></strong>
                 <span id="comment-text-{{ feedback.id }}">
                     {{ feedback.comment|safe }}
                 </span>
 
-                <!-- Form to edit the comment -->
+                <!-- Form to edit the comment (Initially hidden) -->
                 <form method="POST" action="{% url 'trainers:edit_feedback' feedback.id %}" style="display:none;"
                     id="edit-form-{{ feedback.id }}">
                     {% csrf_token %}
-                    {{ form.as_p }}
-                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                    <div class="form-group">
+                        <label for="comment-{{ feedback.id }}" class="text-light">Edit Comment:</label>
+                        <textarea name="comment" id="comment-{{ feedback.id }}" class="form-control"
+                            rows="4">{{ feedback.comment }}</textarea>
+                    </div>
+                    <button type="submit" class="btn btn-success btn-block">Save Changes</button>
                 </form>
             </p>
 
@@ -82,8 +88,6 @@
             {% endif %}
         </div>
         {% endfor %}
-        <!-- This is the correct closing tag for the 'for' loop -->
-
         {% else %}
         <p>No comments yet. Be the first to leave feedback!</p>
         {% endif %}
