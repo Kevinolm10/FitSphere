@@ -35,6 +35,7 @@ body {
     line-height: 1.6;
     padding: 0;
     background-color: #333;
+    overflow: hidden;
 }
 
 main {
@@ -723,48 +724,245 @@ footer {
 
 /* Responsive Design: Smaller Screens */
 @media (max-width: 767px) {
-    .card {
-        margin: 10px;
+    @media (max-width: 767px) {
+
+        /* General layout adjustments */
+        html,
+        body {
+            height: 100%;
+            overflow-x: hidden;
+            /* Prevent horizontal scrolling */
+        }
+
+        /* Ensure no vertical scrolling if required */
+        body {
+            overflow-y: auto;
+            /* Allow vertical scrolling if needed */
+        }
+
+        /* Adjust card styling for small screens */
+        .card {
+            margin: 10px;
+            padding: 15px;
+            border: 1px solid #FF5733;
+            background-color: #333;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            flex: 1;
+            /* Make the cards more flexible */
+        }
+
+        .card-img-top {
+            width: 100px;
+            /* Smaller image size for mobile */
+            height: 100px;
+        }
+
+        .card-body {
+            padding: 10px;
+            /* Adjust padding for smaller screens */
+        }
+
+        /* Button adjustments for touch-friendliness */
+        .intro-buttons .btn {
+            width: 100%;
+            padding: 12px 0;
+            margin-top: 10px;
+        }
+
+        /* Adjust text sizes for better readability */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 1.5rem;
+            /* Adjust font size for small screens */
+        }
+
+        p {
+            font-size: 14px;
+            /* Slightly smaller font for paragraphs */
+        }
+
+        .trainer-intro h2 {
+            font-size: 2rem;
+        }
+
+        .trainer-intro p {
+            font-size: 1rem;
+        }
+
+        .profile-image {
+            width: 120px;
+            /* Smaller profile image */
+            height: 120px;
+        }
+
+        .card-body {
+            padding: 10px;
+        }
+
+        /* Adjust flexbox layouts for smaller screens */
+        .intro-buttons {
+            display: flex;
+            flex-direction: column;
+            /* Stack buttons vertically */
+            gap: 15px;
+        }
+
+        .card-body {
+            padding: 15px;
+        }
+
+        /* Input fields and form elements adjustments */
+        .text-box,
+        .form-select,
+        .auth-box input[type="text"],
+        .auth-box input[type="password"],
+        .auth-box input[type="email"],
+        .auth-box input[type="checkbox"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 5px;
+            background-color: #555;
+        }
+
+        /* Make form inputs full width and more touch-friendly */
+        .text-box:focus,
+        .form-select:focus,
+        .auth-box input:focus {
+            outline: none;
+            border-color: #1c8f74;
+        }
+
+        .auth-box input[type="text"],
+        .auth-box input[type="password"],
+        .auth-box input[type="email"] {
+            width: 100%;
+            padding: 12px;
+            font-size: 1rem;
+            background-color: #333;
+        }
+
+        /* Adjust button size for mobile */
+        .intro-buttons .btn-primary,
+        .intro-buttons .btn-secondary {
+            padding: 12px 20px;
+            font-size: 1.2rem;
+        }
+
+        .intro-buttons .btn-primary:hover,
+        .intro-buttons .btn-secondary:hover {
+            transform: translateY(-5px);
+            background-color: #d04e2f;
+        }
+
+        /* Video background adjustments for smaller screens */
+        .video-background {
+            position: relative;
+            width: 100%;
+            height: 50vh;
+            /* Reduced height for mobile */
+            overflow: hidden;
+        }
+
+        .my-video {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Adjust h3 for smaller devices */
+        h3 {
+            font-size: 1.2rem;
+            /* Smaller heading size */
+        }
+
+        /* About section adjustments */
+        .about-section {
+            padding: 20px;
+        }
+
+        .about-section h3 {
+            font-size: 1.6rem;
+        }
+
+        .about-section p {
+            font-size: 1rem;
+        }
+
+        /* Feedback section adjustments */
+        .feedback-item {
+            padding: 15px;
+        }
+
+        .feedback-item .comment-h3 {
+            font-size: 1.6rem;
+        }
+
+        .feedback-item p {
+            font-size: 1rem;
+        }
+
+        /* Form adjustments for smaller screens */
+        .form-btn {
+            padding: 12px;
+            font-size: 1.1rem;
+        }
+
+        .form-group {
+            margin-top: 20px;
+        }
+
+        /* For the Auth container */
+        .auth-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 0 20px;
+        }
+
+        .auth-box {
+            padding: 30px 40px;
+            width: 100%;
+            max-width: 400px;
+            /* Make the auth box more compact */
+        }
+
+        /* Styling for the logout page */
+        .logout-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 0 10px;
+        }
+
+        .logout-container {
+            padding: 30px;
+            max-width: 350px;
+        }
+
+        .logout-button {
+            padding: 12px 20px;
+            font-size: 1.1rem;
+            width: 100%;
+        }
+
+        /* Footer Adjustments */
+        footer {
+            padding: 15px 0;
+        }
+
+        .social-icons i {
+            font-size: 22px;
+            margin: 0 10px;
+        }
     }
 
-    .card-img-top {
-        width: 120px;
-        height: 120px;
-    }
-
-    .card-body {
-        padding: 15px;
-    }
-
-    .intro-buttons {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .intro-buttons .btn {
-        width: 100%;
-        padding: 6px 0;
-        margin-top: 10px;
-    }
-
-    .profile-image {
-        width: 120px;
-        height: 120px;
-    }
-
-    h2 {
-        font-size: 1.5rem;
-    }
-
-    p {
-        font-size: 1rem;
-    }
-
-    h3 {
-        font-size: 1.2rem;
-    }
-
-    .text-box {
-        height: 120px;
-    }
 }
