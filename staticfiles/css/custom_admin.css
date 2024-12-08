@@ -1,0 +1,170 @@
+/* General reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #333;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Branding */
+#branding {
+    padding: 15px;
+    background-color: #222;
+}
+
+#branding a {
+    color: #FF5733;
+    font-size: 24px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#branding a:hover {
+    text-decoration: underline;
+}
+
+/* Header styles */
+header#header {
+    background-color: #222;
+    border-bottom: 1px solid #444;
+    padding: 10px 20px;
+}
+
+#user-tools {
+    color: #fff;
+    text-align: right;
+}
+
+#user-tools a {
+    color: #FF5733;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+#user-tools a:hover {
+    text-decoration: underline;
+}
+
+#user-tools button {
+    background-color: #FF5733;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#user-tools button:hover {
+    background-color: #e74c3c;
+}
+
+/* Main content */
+.main {
+    padding: 20px;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #FF5733;
+}
+
+h2,
+h3 {
+    color: #FF5733;
+}
+
+/* Tables for the app modules */
+table {
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+}
+
+caption {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: left;
+    color: #FF5733;
+    padding-bottom: 10px;
+}
+
+th,
+td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #444;
+}
+
+th {
+    background-color: #444;
+    color: #fff;
+}
+
+td a {
+    color: #FF5733;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+td a:hover {
+    text-decoration: underline;
+}
+
+/* Addlink and changelink styles */
+.addlink,
+.changelink {
+    color: #FF5733;
+    font-weight: bold;
+}
+
+.addlink:hover,
+.changelink:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+#footer {
+    background-color: #222;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.footer p {
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    #branding a {
+        font-size: 20px;
+    }
+
+    header#header {
+        padding: 10px;
+    }
+
+    .main {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+}
