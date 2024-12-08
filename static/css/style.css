@@ -65,6 +65,7 @@ span {
     color: #FF5733;
 }
 
+/* Basic Navbar Styling */
 /* Navbar brand styling */
 .navbar-brand {
     letter-spacing: 3px;
@@ -83,9 +84,36 @@ span {
     transition: text-shadow 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
-/* Default nav item styling */
+/* Basic Navbar Styling */
+.navbar {
+    background-color: #333;
+    /* Dark background */
+    padding: 0.5rem 1rem;
+    /* Padding for the navbar */
+}
+
+/* Navbar links styling */
+.navbar-nav {
+    display: flex;
+    justify-content: center;
+    /* Center the links */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Center the nav items even when 'Home' link is hidden */
+.navbar-nav.mx-auto {
+    margin: 0 auto;
+    /* Ensure the navbar is centered */
+}
+
+/* Navbar item styling */
 .nav-item {
     transition: color 0.3s ease;
+    padding-left: 15px;
+    /* Adjust the padding between nav items */
+    padding-right: 15px;
 }
 
 /* Hover effect for nav items (links) */
@@ -114,6 +142,13 @@ span {
     font-weight: bold;
 }
 
+/* Make sure navbar links remain centered when Home is hidden */
+.navbar-nav {
+    display: flex;
+    justify-content: center;
+    /* Center the nav items */
+    width: 100%;
+}
 
 .wrapper {
     display: flex;
