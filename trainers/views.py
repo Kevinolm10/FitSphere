@@ -19,7 +19,7 @@ def trainer_profile(request, trainer_id):
     avg_rating = trainer.get_average_rating()
 
     # Pass relevant data to the template
-    return render(request, 'trainer_profile.html', {
+    return render(request, 'trainers/trainer_profile.html', {
         'trainer': trainer,
         'feedbacks': feedbacks,
         'avg_rating': round(avg_rating, 1),  # Round to one decimal place
