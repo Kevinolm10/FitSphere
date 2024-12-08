@@ -1,0 +1,33 @@
+{% extends 'admin/base.html' %}
+
+{% load static %}
+
+{% block title %}
+FitSphere Admin | {{ block.super }}
+{% endblock %}
+
+{% block branding %}
+<div id="branding" class="custom-branding">
+    <a href="/" id="site-name" class="navbar-brand">FitSphere Admin</a>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="admin-container">
+    <div class="custom-admin-header">
+        <h1>Welcome to the Custom Admin Panel!</h1>
+        <p>Manage your trainers and feedback with ease.</p>
+    </div>
+    {{ block.super }}
+</div>
+{% endblock %}
+
+{% block footer %}
+<div class="footer">
+    <p>&copy; 2024 FitSphere admin panel</p>
+</div>
+{% endblock %}
+
+{% block extrastyle %}
+<link rel="stylesheet" href="{% static 'css/custom_admin.css' %}">
+{% endblock %}
