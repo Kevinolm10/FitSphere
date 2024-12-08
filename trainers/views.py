@@ -1,9 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.http import HttpResponse
 from django.contrib import messages
 from .models import Trainer, TrainerFeedback
-
-# Create your views here.
+from .forms import TrainerFeedbackForm
 
 # View to display all trainers
 def trainers(request):
@@ -13,68 +11,22 @@ def trainers(request):
     # Pass the trainers to the template as context
     return render(request, 'trainers/trainers.html', {'trainers': trainers})
 
-# View to display a specific trainer profile along with feedback
 def trainer_profile(request, trainer_id):
     trainer = get_object_or_404(Trainer, id=trainer_id)
-
-    # Get all feedbacks for the trainer
+    
+    # Get feedbacks and average rating directly
     feedbacks = TrainerFeedback.objects.filter(trainer=trainer)
-
-    # Calculate the average rating for the trainer and round it to 1 decimal place
     avg_rating = trainer.get_average_rating()
 
-    # Round to 1 decimal place for easy template handling
-    avg_rating = round(avg_rating, 1)
-
-    # Create a list of star numbers (for looping in the template)
-    stars_range = range(1, 6)
-
-    # Pass the trainer, feedbacks, average rating, and star range to the template
+    # Pass relevant data to the template
     return render(request, 'trainer_profile.html', {
         'trainer': trainer,
         'feedbacks': feedbacks,
-        'avg_rating': avg_rating,
-        'stars_range': stars_range,
+        'avg_rating': round(avg_rating, 1),  # Round to one decimal place
+        'stars_range': range(1, 6)  # For star rating display
     })
 
-
-def edit_feedback(request, id):
-    # Get the feedback object by id (if it exists)
-    feedback = get_object_or_404(TrainerFeedback, id=id)
-
-    # Check if the logged-in user is the same as the one who left the feedback
-    if feedback.user != request.user:
-        messages.error(request, "You can't edit someone else's feedback.")
-        return redirect('trainers:trainer_profile', trainer_id=feedback.trainer.id)
-
-    # Handle POST request to update the feedback
-    if request.method == 'POST':
-        form = TrainerFeedbackForm(request.POST, instance=feedback)
-        if form.is_valid():
-            form.save()  # Save the updated feedback
-            messages.success(request, "Your feedback has been updated!")
-            return redirect('trainers:trainer_profile', trainer_id=feedback.trainer.id)
-    else:
-        # Pre-populate the form with the current feedback
-        form = TrainerFeedbackForm(instance=feedback)
-
-    return render(request, 'edit_feedback.html', {'form': form, 'feedback': feedback})
-
-
-
-def delete_feedback(request, id):
-    feedback = get_object_or_404(TrainerFeedback, id=id)
-    trainer = feedback.trainer  # Get the trainer related to this feedback
-
-    if feedback.user == request.user:
-        feedback.delete()
-        return redirect('trainers:trainer_profile', trainer_id=trainer.id)  # Pass trainer_id after delete
-
-
-
-
 def submit_feedback(request, trainer_id):
-    # Ensure the user is authenticated before allowing feedback submission
     if not request.user.is_authenticated:
         messages.error(request, "You must be logged in to leave feedback.")
         return redirect('login')
@@ -82,30 +34,66 @@ def submit_feedback(request, trainer_id):
     trainer = get_object_or_404(Trainer, id=trainer_id)
 
     if request.method == 'POST':
-        # Get the data from the form
         rating = request.POST.get('rating')
         comment = request.POST.get('comment')
 
-        # Make sure rating is valid
         if rating not in ['1', '2', '3', '4', '5']:
             messages.error(request, "Invalid rating. Please select a valid star rating.")
-            return redirect('trainer_profile', trainer_id=trainer.id)
+            return redirect('trainers:trainer_profile', trainer_id=trainer.id)
 
-        # Create a new feedback object and save it
-        feedback = TrainerFeedback(
+        TrainerFeedback.objects.create(
             user=request.user,
             trainer=trainer,
             rating=int(rating),
             comment=comment
         )
-        feedback.save()
 
-        # Add a success message after feedback submission
-        messages.success(request, "Thank you for your feedback! It has been successfully submitted.")
-
-        # Redirect to the trainer profile page
+        messages.success(request, "Thank you for your feedback!")
         return redirect('trainers:trainer_profile', trainer_id=trainer.id)
-    else:
-        form = FeedbackForm()
 
-    return render(request, 'trainer_profile.html', {'trainer': trainer})
+    return redirect('trainers:trainer_profile', trainer_id=trainer.id)
+
+def edit_feedback(request, feedback_id):
+    # Get the feedback object to be edited
+    feedback = get_object_or_404(TrainerFeedback, id=feedback_id)
+    trainer = feedback.trainer  # Get the associated trainer
+
+    # Ensure the logged-in user is the owner of the feedback
+    if request.user != feedback.user:
+        messages.error(request, "You do not have permission to edit this feedback.")
+        return redirect('trainers:trainer_profile', trainer_id=trainer.id)
+
+    # Process the form submission (POST request)
+    if request.method == 'POST':
+        form = TrainerFeedbackForm(request.POST, instance=feedback)  # Populate form with existing data
+        if form.is_valid():
+            form.save()  # Save the updated feedback
+            messages.success(request, "Feedback updated successfully!")
+            return redirect('trainers:trainer_profile', trainer_id=trainer.id)
+        else:
+            print(form.errors)  # Log form errors for debugging
+            messages.error(request, "There was an error updating your feedback.")
+            return redirect('trainers:trainer_profile', trainer_id=trainer.id)
+
+    else:
+        form = TrainerFeedbackForm(instance=feedback)
+
+    return render(request, 'trainer_profile.html', {
+        'form': form,
+        'feedback': feedback,
+        'trainer': trainer,
+    })
+
+
+
+def delete_feedback(request, id):
+    feedback = get_object_or_404(TrainerFeedback, id=id)
+    trainer = feedback.trainer
+
+    if feedback.user == request.user:
+        feedback.delete()
+        messages.success(request, "Feedback deleted successfully!")
+    else:
+        messages.error(request, "You can only delete your own feedback.")
+
+    return redirect('trainers:trainer_profile', trainer_id=trainer.id)
