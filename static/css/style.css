@@ -382,6 +382,51 @@ span {
     line-height: 1.6;
 }
 
+/* Styling for the Edit form (Initially hidden) */
+#edit-form-1 {
+    display: none;
+    margin-top: 10px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #444;
+    border: 1px solid #555;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Form Input (Textarea) Styling */
+#edit-form-1 textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #666;
+    border-radius: 8px;
+    font-size: 16px;
+    resize: vertical;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#edit-form-1 textarea:focus {
+    border-color: #6c757d;
+    box-shadow: 0 0 8px rgba(108, 117, 125, 0.5);
+}
+
+/* Label styling */
+#edit-form-1 label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #ccc;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+.btn.btn-success.btn-block {
+    margin: 0.2em;
+}
+
+
+
 /* Styles for the comment box */
 .user-comment-box {
     background-color: #444;
