@@ -1,33 +1,39 @@
 /* Custom Scrollbar Styling */
+/* Style the scrollbar */
 ::-webkit-scrollbar {
     width: 6px;
 }
 
+/* Style the scrollbar track (background) */
 ::-webkit-scrollbar-track {
     background-color: #333;
     border-radius: 10px;
 }
 
+/* Style the scrollbar thumb (the draggable part) */
 ::-webkit-scrollbar-thumb {
     background-color: #FF5733;
     border-radius: 10px;
 }
 
+/* Style the thumb when hovered */
 ::-webkit-scrollbar-thumb:hover {
     background-color: #e44d26;
 }
 
+/* Optional: Hide the scrollbar buttons (arrows) */
 ::-webkit-scrollbar-button {
     display: none;
 }
 
-/* Global Body and Layout Styles */
 html,
 body {
     margin: 0;
-    padding: 0;
-    font-family: 'Lora', serif;
+    font-family: 'Lora',
+        serif;
+    /* Body font */
     line-height: 1.6;
+    padding: 0;
     background-color: #333;
     overflow-y: auto;
     overflow-x: hidden;
@@ -35,6 +41,7 @@ body {
 
 main {
     min-height: 100vh;
+
 }
 
 h1,
@@ -49,53 +56,78 @@ h6 {
     color: white;
 }
 
-p,
-.feedback-item p,
-.about-section p,
-.about-text p,
-.mission-statement p,
-.about-header p {
+p {
     color: white;
-    font-size: 1.125rem;
-    line-height: 1.6;
+    font-size: 16px;
 }
 
 span {
     color: #FF5733;
 }
 
-/* Navbar Styling */
-.navbar {
-    background-color: #333;
-    padding: 0.5rem 1rem;
-}
-
+/* Basic Navbar Styling */
+/* Navbar brand styling */
 .navbar-brand {
     letter-spacing: 3px;
     transition: color 0.3s ease;
     margin-left: 5px;
 }
 
-.navbar-brand:hover,
-.nav-item:hover {
-    text-shadow: 0 0 10px rgba(255, 87, 51, 1), 0 0 50px rgba(255, 87, 51, 0.6);
+/* Hover effect for the brand */
+.navbar-brand:hover {
+    text-shadow: 0 0 10px rgba(255, 87, 51, 1),
+        0 0 20px rgba(255, 87, 51, 0.8),
+        0 0 30px rgba(255, 87, 51, 0.6),
+        0 0 40px rgba(255, 87, 51, 0.4),
+        0 0 50px rgba(255, 87, 51, 0.2);
     transform: scale(1.1);
-    transition: text-shadow 0.3s ease, transform 0.3s ease;
+    transition: text-shadow 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
+/* Basic Navbar Styling */
+.navbar {
+    background-color: #333;
+    /* Dark background */
+    padding: 0.5rem 1rem;
+    /* Padding for the navbar */
+}
+
+/* Navbar links styling */
 .navbar-nav {
     display: flex;
     justify-content: center;
+    /* Center the links */
     width: 100%;
     margin: 0;
     padding: 0;
 }
 
-.nav-item {
-    transition: color 0.3s ease;
-    padding: 0 15px;
+/* Center the nav items even when 'Home' link is hidden */
+.navbar-nav.mx-auto {
+    margin: 0 auto;
+    /* Ensure the navbar is centered */
 }
 
+/* Navbar item styling */
+.nav-item {
+    transition: color 0.3s ease;
+    padding-left: 15px;
+    /* Adjust the padding between nav items */
+    padding-right: 15px;
+}
+
+/* Hover effect for nav items (links) */
+.nav-item:hover {
+    text-shadow: 0 0 10px rgba(255, 87, 51, 1),
+        0 0 20px rgba(255, 87, 51, 0.8),
+        0 0 30px rgba(255, 87, 51, 0.6),
+        0 0 40px rgba(255, 87, 51, 0.4),
+        0 0 50px rgba(255, 87, 51, 0.2);
+    transform: scale(1.1);
+    transition: text-shadow 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+/* Active state for the nav link */
 .nav-link.active {
     color: #FF5733 !important;
     font-weight: bold;
@@ -103,11 +135,71 @@ span {
     text-shadow: none;
 }
 
+/* Ensure active link styles apply even when hovering */
 .nav-item.active:hover .nav-link {
     text-decoration: underline;
     text-shadow: none;
     font-weight: bold;
 }
+
+/* Make sure navbar links remain centered when Home is hidden */
+.navbar-nav {
+    display: flex;
+    justify-content: center;
+    /* Center the nav items */
+    width: 100%;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.video-background {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    /* Use full viewport height */
+    overflow: hidden;
+}
+
+/* The video itself */
+.my-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensures the video covers the screen without stretching */
+}
+
+/* Trainer Intro Section */
+.trainer-intro {
+    background-color: #333;
+    padding: 40px 20px;
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.trainer-intro h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.trainer-intro p {
+    font-size: 1.125rem;
+    color: white;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
 
 /* Card Styling */
 .card {
@@ -119,11 +211,13 @@ span {
     overflow: hidden;
 }
 
+/* Card Hover Effect */
 .card:hover {
     transform: translateY(-10px);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* Image Styling */
 .card-img-top {
     width: 150px;
     height: 150px;
@@ -134,15 +228,15 @@ span {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Card Body */
 .card-body {
     color: #fff;
     padding: 20px;
     text-align: center;
-    display: flex;
-    flex-direction: column;
 }
 
 .card-title {
+    color: #fff;
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 10px;
@@ -154,45 +248,110 @@ span {
     margin-bottom: 10px;
 }
 
-/* Buttons */
-.btn,
-.intro-buttons .btn,
-.logout-button,
-.btn-submit,
-.reset-btn,
-.form-btn,
-.password-reset-form .reset-btn {
-    background-color: #FF5733;
-    color: white;
-    padding: 12px;
+.image-pos {
+    padding: 0.5em;
+}
+
+/* Styling for the profile image */
+.profile-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.content {
+    flex-grow: 1;
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    text-align: center;
+    color: #f1f1f1;
+    background-color: rgba(128, 128, 128, 0.7) !important;
+    border-radius: 10px;
+    z-index: 1;
+    backdrop-filter: blur(5px);
+}
+
+.intro-buttons .btn {
+    padding: 6px 15px;
     font-size: 1.125rem;
+    text-transform: uppercase;
     border-radius: 25px;
+    text-decoration: none;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.btn:hover,
-.intro-buttons .btn:hover,
-.logout-button:hover,
-.reset-btn:hover,
-.btn-submit:hover {
+.intro-buttons .btn-primary {
+    background-color: #FF5733;
+    color: white;
+}
+
+.intro-buttons .btn-secondary {
+    background-color: #1c8f74;
+    color: white;
+    margin-top: 3px;
+}
+
+.intro-buttons .btn:hover {
+    transform: translateY(-5px);
+}
+
+.intro-buttons .btn-primary:hover {
     background-color: #d04e2f;
+}
+
+.intro-buttons .btn-secondary:hover {
+    background-color: #1c8f74;
+}
+
+.btn {
+    background-color: #FF5733;
+}
+
+.btn:hover {
+    background-color: #FF5733;
+    box-shadow: 0 0 10px rgba(255, 87, 51, 1),
+        0 0 20px rgba(255, 87, 51, 0.8),
+        0 0 30px rgba(255, 87, 51, 0.6),
+        0 0 40px rgba(255, 87, 51, 0.4),
+        0 0 50px rgba(255, 87, 51, 0.2);
     transform: scale(1.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-.form-btn,
-.reset-btn {
-    background-color: #00bcd4;
+.card-body {
+    display: flex;
+    flex-direction: column;
 }
 
-.form-btn:hover,
-.reset-btn:hover {
-    background-color: #0097a7;
+.card-body .card-text {
+    order: 0;
 }
 
-/* Rating Styling */
+.card-body .card-text strong {
+    order: -1;
+}
+
+.age {
+    color: white;
+}
+
 .star-rating {
     font-size: 1.5em;
+    /* Control the size of the stars */
     color: #FF5733;
+    /* Default color for empty stars */
 }
 
 .star-rating .fa-star {
@@ -201,53 +360,268 @@ span {
 
 .star-rating .checked {
     color: #FF5733;
+    /* Color for filled stars (yellow) */
 }
 
 .star-rating .fa-star-half-alt {
     color: #FF5733;
+    /* Color for half-filled stars (yellow) */
 }
 
-/* Input Fields & Forms */
-.input-field,
-.form-select,
-.text-box,
+/* About Section */
+.about-section {
+    background-color: #444;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-section h3 {
+    font-size: 1.8rem;
+    color: #FF5733;
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+/* Error msg when commenting */
+.alert-container {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.alert {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Feedback Items */
+.feedback-item {
+    background-color: #444;
+    color: #FF5733;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.comment-h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.feedback-item p {
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Styling for the feedback date */
+.feedback-date {
+    font-size: 0.875rem;
+    color: white;
+    margin-top: 5px;
+    font-style: italic;
+    text-align: right;
+}
+
+/* Hover effect for the feedback date */
+.feedback-date em {
+    transition: color 0.3s ease;
+}
+
+/* Styling for the Edit form (Initially hidden) */
+#edit-form-1 {
+    display: none;
+    margin-top: 10px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #444;
+    border: 1px solid #555;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Form Input (Textarea) Styling */
 #edit-form-1 textarea {
     width: 100%;
     padding: 12px;
+    border: 1px solid #666;
     border-radius: 8px;
     font-size: 16px;
+    resize: vertical;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.input-field:focus,
-.form-select:focus,
 #edit-form-1 textarea:focus {
     border-color: #6c757d;
     box-shadow: 0 0 8px rgba(108, 117, 125, 0.5);
 }
 
-/* Flexbox Containers */
-.wrapper,
-.feedback-item,
-.user-comment-box,
-.about-section1,
-.password-reset-wrapper,
-.auth-container,
-.logout-wrapper {
+/* Label styling */
+#edit-form-1 label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #ccc;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+.btn.btn-success.btn-block {
+    margin: 0.2em;
+}
+
+
+
+/* Styles for the comment box */
+.user-comment-box {
+    background-color: #444;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 800px;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    margin-left: auto;
+    margin-right: auto;
+
+    /* Centering content inside the box */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Horizontally center */
+    justify-content: center;
+    /* Vertically center */
+}
+
+/* Styles for the comment text input box */
+.text-box {
+    width: 100%;
+    padding: 15px;
+    margin-top: 10px;
+    background-color: #555;
+    border: 1px solid #666;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1rem;
+    line-height: 1.5;
+    resize: vertical;
+    min-height: 120px;
+    transition: border-color 0.3s ease;
+}
+
+.text-box:focus {
+    background-color: #555;
+    /* Lighter background when focused */
+    outline: none;
+}
+
+/* Rating dropdown */
+.form-group {
+    margin-top: 20px;
+}
+
+.form-label {
+    font-size: 1rem;
+    color: #bbb;
+    margin-bottom: 5px;
+}
+
+.form-select {
+    width: 100%;
+    padding: 10px;
+    background-color: #555;
+    border: 1px solid #666;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-select:focus {
+    outline: none;
+    border-color: #00bcd4;
+}
+
+/* Submit button */
+.form-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #00bcd4;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-btn:hover {
+    background-color: #0097a7;
+}
+
+.star-rating-label {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #bbb;
+}
+
+/* General container for centering the content */
+.auth-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+    padding: 0 20px;
 }
 
-.auth-box,
-.password-reset-wrapper,
-.logout-container {
+/* The form box styling */
+.auth-box {
     background-color: #444;
-    padding: 30px;
+    padding: 40px 50px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    min-height: 450px;
 }
 
+/* Title inside the form */
+.auth-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+/* Error message styling */
+.error-message {
+    background-color: #ff4d4d;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+/* Style for all input fields inside .auth-box */
 .auth-box input[type="text"],
 .auth-box input[type="password"],
 .auth-box input[type="email"],
@@ -259,17 +633,349 @@ span {
     border: 1px solid white;
     background-color: #333;
     color: white;
+    font-size: 16px;
 }
 
+/* Optional: Specific styles for the checkbox */
+.auth-box input[type="checkbox"] {
+    width: auto;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+/* Focus styling to highlight the input field when active */
 .auth-box input[type="text"]:focus,
 .auth-box input[type="password"]:focus,
-.auth-box input[type="email"]:focus {
+.auth-box input[type="email"]:focus,
+.auth-box input[type="checkbox"]:focus {
     border-color: #1c8f74;
     outline: none;
 }
 
-/* Footer & Social Icons */
+
+/* Label styling */
+.auth-box label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: white;
+}
+
+/* Focus state for input fields */
+.auth-box input:focus {
+    border-color: #1c8f74;
+    outline: none;
+}
+
+/* Buttons */
+.btn-submit {
+    background-color: #1c8f74;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-submit:hover {
+    background-color: #177b62;
+}
+
+/* "Remember Me" label styling */
+.remember-label {
+    font-size: 14px;
+    color: white;
+}
+
+/* Forgot password and Sign Up links */
+
+.forgot-password,
+.signup-text a {
+    color: #1c8f74;
+    text-decoration: none;
+}
+
+.forgot-password a:hover,
+.signup-text a:hover {
+    color: #177b62;
+    text-decoration: underline;
+}
+
+.signup-text {
+    color: white;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+/* Styling for the password rules */
+.form-group li {
+    list-style-type: none;
+    /* Remove default list markers */
+    padding-left: 0;
+    color: #fff;
+    /* White text color */
+    margin-top: 10px;
+}
+
+/* Styling when the rule is met */
+.form-group li.valid {
+    color: #28a745;
+    /* Green */
+}
+
+/* Styling when the rule is not met */
+.form-group li.invalid {
+    color: #dc3545;
+    /* Red */
+}
+
+/* Make the whole page take the full viewport height */
+.logout-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #333;
+    padding: 0 10px;
+    margin: 0;
+}
+
+/* Container for logout content */
+.logout-container {
+    background-color: #444;
+    /* Slightly lighter background for the container */
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Title Styling */
+.logout-title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #f1f1f1;
+}
+
+/* Message Styling */
+.logout-message {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: #ccc;
+}
+
+/* Button Styling */
+.logout-button {
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Button Hover Effect */
+.logout-button:hover {
+    background-color: #d32f2f;
+    transform: scale(1.05);
+}
+
+/* Button Focus Effect */
+.logout-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 87, 34, 0.5);
+}
+
+/* About Page Styling */
+.about-section1 {
+    background-color: #333;
+    /* Dark background */
+    color: #fff;
+    /* Light text for contrast */
+    padding: 60px 0;
+    padding-top: 100px;
+    /* Add padding at the top */
+}
+
+.about-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.about-header h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #f44336;
+    /* Accent color for headers */
+}
+
+.about-header p {
+    font-size: 1.25rem;
+    max-width: 800px;
+    margin: 0 auto;
+    color: white;
+    /* Slightly lighter text */
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.about-text {
+    width: 50%;
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: white;
+    /* Slightly lighter text */
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #f44336;
+    margin-bottom: 20px;
+}
+
+.about-image {
+    width: 45%;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.mission-statement {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.mission-statement h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #f44336;
+    margin-bottom: 20px;
+}
+
+.mission-statement p {
+    font-size: 1.25rem;
+    max-width: 800px;
+    margin: 0 auto;
+    color: white;
+    line-height: 1.8;
+}
+
+.password-reset-wrapper {
+    max-width: 480px;
+    width: 100%;
+    padding: 25px;
+    background-color: #444;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    /* Centers horizontally */
+    position: absolute;
+    /* Allows vertical centering */
+    top: 50%;
+    /* Centers vertically (50% of viewport height) */
+    left: 50%;
+    /* Centers horizontally (50% of viewport width) */
+    transform: translate(-50%, -50%);
+    /* Adjusts position to be truly centered */
+}
+
+.password-reset-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.password-reset-description {
+    font-size: 1rem;
+    margin-bottom: 25px;
+    color: #bbb;
+}
+
+.password-reset-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 100%;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-field input {
+    padding: 14px;
+    font-size: 1rem;
+    border: 1px solid #555;
+    border-radius: 6px;
+    background-color: #222;
+    color: #fff;
+    transition: border-color 0.3s, background-color 0.3s;
+    width: 100%;
+}
+
+.form-field input:focus {
+    border-color: #1a73e8;
+    outline: none;
+    background-color: #333;
+}
+
+.form-submit {
+    display: flex;
+    justify-content: center;
+}
+
+.reset-btn {
+    background-color: #1a73e8;
+    color: #fff;
+    padding: 14px 28px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.reset-btn:hover {
+    background-color: #1558b0;
+}
+
+.password-reset-help {
+    font-size: 0.9rem;
+    color: #bbb;
+    margin-top: 25px;
+}
+
+
+
+
 footer {
+    margin-top: 0;
     background-color: #f8f9fa;
     padding: 20px 0;
     text-align: center;
@@ -280,15 +986,27 @@ footer {
     font-size: 24px;
     margin: 0 15px;
     padding: 5px;
+    margin: 1px;
+}
+
+.social {
     color: #FF5733;
 }
 
 .social-icons i:hover {
-    text-shadow: 0 0 10px rgba(255, 87, 51, 1), 0 0 50px rgba(255, 87, 51, 0.6);
+    text-shadow: 0 0 10px rgba(255, 87, 51, 1),
+        0 0 20px rgba(255, 87, 51, 0.8),
+        /* Second layer */
+        0 0 30px rgba(255, 87, 51, 0.6),
+        /* Third layer */
+        0 0 40px rgba(255, 87, 51, 0.4),
+        /* Fourth layer */
+        0 0 50px rgba(255, 87, 51, 0.2);
     transform: scale(1.1);
+    transition: text-shadow 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
 }
-
-
 
 /* Responsive Design: Smaller Screens */
 @media (max-width: 767px) {
@@ -297,16 +1015,16 @@ footer {
     html,
     body {
         height: 100%;
-        margin: 0;
-        padding: 0;
         overflow-x: hidden;
         /* Prevent horizontal scrolling */
+        padding: 0;
+        margin: 0;
     }
 
     .video-background {
         position: relative;
+        /* Reduced height for mobile */
         overflow: hidden;
-        /* No need for reduced height, keeps it simpler */
     }
 
     .my-video {
@@ -324,13 +1042,13 @@ footer {
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         flex: 1;
-        /* Flexible cards */
+        /* Make the cards more flexible */
     }
 
     .card-img-top {
         width: 100px;
+        /* Smaller image size for mobile */
         height: 100px;
-        /* Smaller image size */
     }
 
     .card-body {
@@ -345,11 +1063,12 @@ footer {
     h5,
     h6 {
         font-size: 1.5rem;
-        /* Smaller fonts */
+        /* Adjust font size for small screens */
     }
 
     p {
         font-size: 14px;
+        /* Slightly smaller font for paragraphs */
     }
 
     .trainer-intro h2 {
@@ -363,14 +1082,15 @@ footer {
     /* Profile Image Styling */
     .profile-image {
         width: 120px;
-        height: 120px;
         /* Smaller profile image */
+        height: 120px;
     }
 
     /* Adjust flexbox layouts for smaller screens */
     .intro-buttons {
         display: flex;
         flex-direction: column;
+        /* Stack buttons vertically */
         gap: 15px;
     }
 
@@ -382,17 +1102,23 @@ footer {
 
     .auth-container {
         padding: 10px;
+        height: auto;
     }
 
-    /* Auth-box and form elements adjustments */
+    /* Adjust auth-box for smaller screens */
     .auth-box {
         padding: 20px;
         width: 90%;
+        height: auto;
     }
 
+    /* Input fields and form elements adjustments */
     .text-box,
     .form-select,
-    .auth-box input {
+    .auth-box input[type="text"],
+    .auth-box input[type="password"],
+    .auth-box input[type="email"],
+    .auth-box input[type="checkbox"] {
         width: 100%;
         padding: 10px;
         font-size: 1rem;
@@ -400,6 +1126,7 @@ footer {
         background-color: #555;
     }
 
+    /* Make form inputs full width and more touch-friendly */
     .text-box:focus,
     .form-select:focus,
     .auth-box input:focus {
@@ -407,7 +1134,7 @@ footer {
         border-color: #1c8f74;
     }
 
-    /* Adjust section layout */
+    /* Adjust card layout for smaller devices */
     .about-section,
     .feedback-item,
     .user-comment-box {
@@ -511,8 +1238,7 @@ footer {
         font-size: 1.7rem;
     }
 
-    .password-reset-description,
-    .password-reset-help {
+    .password-reset-description {
         font-size: 0.9rem;
     }
 
@@ -524,5 +1250,9 @@ footer {
     .reset-btn {
         padding: 12px 24px;
         font-size: 0.95rem;
+    }
+
+    .password-reset-help {
+        font-size: 0.8rem;
     }
 }
