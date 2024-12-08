@@ -54,13 +54,28 @@
             </div>
             <!-- Display the username and the comment -->
             <p><strong><span>{{ feedback.user.username }}:</span></strong> {{ feedback.comment|safe }}</p>
+
+            <!-- Add Edit and Delete buttons if the user is the owner of the comment -->
+            {% if feedback.user == user %}
+            <div class="comment-actions">
+                <!-- Edit Button -->
+                <a href="{% url 'trainers:edit_feedback' feedback.id %}" class="btn btn-primary btn-sm">Edit</a>
+                <!-- Delete Button -->
+                <form action="{% url 'trainers:delete_feedback' feedback.id %}" method="POST" style="display:inline;">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                </form>
+            </div>
+            {% endif %}
         </div>
         {% endfor %}
         {% else %}
-        <p class="feedback-item">No comments yet. Be the first one to leave feedback!</p>
+        <p>No comments yet. Be the first to leave feedback!</p>
         {% endif %}
     </div>
 </div>
+
+
 
 <!-- Comment field, only visible if signed in -->
 {% if user.is_authenticated %}
@@ -89,7 +104,5 @@
 {% else %}
 <h3 class="user-comment-box">Create an account or sign in to leave your feedback!</h3>
 {% endif %}
-
-
 
 {% endblock %}
