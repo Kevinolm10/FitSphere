@@ -73,16 +73,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 function toggleEditForm(feedbackId) {
-    // Toggle visibility of the edit form and comment text
     var form = document.getElementById('edit-form-' + feedbackId);
     var commentText = document.getElementById('comment-text-' + feedbackId);
 
+    // Toggle visibility
     if (form.style.display === 'none') {
-        form.style.display = 'block'; // Show the form
-        commentText.style.display = 'none'; // Hide the comment text
+        form.style.display = 'block';
+        commentText.style.display = 'none';
     } else {
-        form.style.display = 'none'; // Hide the form
-        commentText.style.display = 'block'; // Show the comment text
+        form.style.display = 'none';
+        commentText.style.display = 'block';
     }
 }
 
@@ -91,4 +91,13 @@ function toggleEditForm(feedbackId) {
 function saveChanges(feedbackId) {
     var form = document.getElementById('edit-form-' + feedbackId);
     form.submit(); // This will submit the form
+}
+
+function updateComment(feedbackId, newCommentText) {
+    var commentText = document.getElementById('comment-text-' + feedbackId);
+    commentText.textContent = newCommentText; // Update the comment text
+
+    // Hide the form and show the updated comment
+    document.getElementById('edit-form-' + feedbackId).style.display = 'none';
+    commentText.style.display = 'block';
 }
