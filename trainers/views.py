@@ -39,18 +39,26 @@ def trainer_profile(request, trainer_id):
 
 
 def edit_feedback(request, id):
+    # Get the feedback object by id (if it exists)
     feedback = get_object_or_404(TrainerFeedback, id=id)
-    trainer = feedback.trainer  # Get the trainer related to this feedback
 
+    # Check if the logged-in user is the same as the one who left the feedback
+    if feedback.user != request.user:
+        messages.error(request, "You can't edit someone else's feedback.")
+        return redirect('trainers:trainer_profile', trainer_id=feedback.trainer.id)
+
+    # Handle POST request to update the feedback
     if request.method == 'POST':
         form = TrainerFeedbackForm(request.POST, instance=feedback)
         if form.is_valid():
-            form.save()
-            return redirect('trainers:trainer_profile', trainer_id=trainer.id)  # Pass trainer_id
+            form.save()  # Save the updated feedback
+            messages.success(request, "Your feedback has been updated!")
+            return redirect('trainers:trainer_profile', trainer_id=feedback.trainer.id)
     else:
+        # Pre-populate the form with the current feedback
         form = TrainerFeedbackForm(instance=feedback)
-    
-    return render(request, 'edit_feedback.html', {'form': form})
+
+    return render(request, 'edit_feedback.html', {'form': form, 'feedback': feedback})
 
 
 
