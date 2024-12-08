@@ -430,6 +430,20 @@ span {
     line-height: 1.6;
 }
 
+/* Styling for the feedback date */
+.feedback-date {
+    font-size: 0.875rem;
+    color: white;
+    margin-top: 5px;
+    font-style: italic;
+    text-align: right;
+}
+
+/* Hover effect for the feedback date */
+.feedback-date em {
+    transition: color 0.3s ease;
+}
+
 /* Styling for the Edit form (Initially hidden) */
 #edit-form-1 {
     display: none;
