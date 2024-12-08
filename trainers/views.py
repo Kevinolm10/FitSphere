@@ -37,6 +37,34 @@ def trainer_profile(request, trainer_id):
         'stars_range': stars_range,
     })
 
+
+def edit_feedback(request, id):
+    feedback = get_object_or_404(TrainerFeedback, id=id)
+    trainer = feedback.trainer  # Get the trainer related to this feedback
+
+    if request.method == 'POST':
+        form = TrainerFeedbackForm(request.POST, instance=feedback)
+        if form.is_valid():
+            form.save()
+            return redirect('trainers:trainer_profile', trainer_id=trainer.id)  # Pass trainer_id
+    else:
+        form = TrainerFeedbackForm(instance=feedback)
+    
+    return render(request, 'edit_feedback.html', {'form': form})
+
+
+
+def delete_feedback(request, id):
+    feedback = get_object_or_404(TrainerFeedback, id=id)
+    trainer = feedback.trainer  # Get the trainer related to this feedback
+
+    if feedback.user == request.user:
+        feedback.delete()
+        return redirect('trainers:trainer_profile', trainer_id=trainer.id)  # Pass trainer_id after delete
+
+
+
+
 def submit_feedback(request, trainer_id):
     # Ensure the user is authenticated before allowing feedback submission
     if not request.user.is_authenticated:
