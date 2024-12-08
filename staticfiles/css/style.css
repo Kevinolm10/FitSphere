@@ -430,6 +430,20 @@ span {
     line-height: 1.6;
 }
 
+/* Styling for the feedback date */
+.feedback-date {
+    font-size: 0.875rem;
+    color: white;
+    margin-top: 5px;
+    font-style: italic;
+    text-align: right;
+}
+
+/* Hover effect for the feedback date */
+.feedback-date em {
+    transition: color 0.3s ease;
+}
+
 /* Styling for the Edit form (Initially hidden) */
 #edit-form-1 {
     display: none;
@@ -865,6 +879,99 @@ span {
     line-height: 1.8;
 }
 
+.password-reset-wrapper {
+    max-width: 480px;
+    width: 100%;
+    padding: 25px;
+    background-color: #444;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    /* Centers horizontally */
+    position: absolute;
+    /* Allows vertical centering */
+    top: 50%;
+    /* Centers vertically (50% of viewport height) */
+    left: 50%;
+    /* Centers horizontally (50% of viewport width) */
+    transform: translate(-50%, -50%);
+    /* Adjusts position to be truly centered */
+}
+
+.password-reset-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.password-reset-description {
+    font-size: 1rem;
+    margin-bottom: 25px;
+    color: #bbb;
+}
+
+.password-reset-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 100%;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-field input {
+    padding: 14px;
+    font-size: 1rem;
+    border: 1px solid #555;
+    border-radius: 6px;
+    background-color: #222;
+    color: #fff;
+    transition: border-color 0.3s, background-color 0.3s;
+    width: 100%;
+}
+
+.form-field input:focus {
+    border-color: #1a73e8;
+    outline: none;
+    background-color: #333;
+}
+
+.form-submit {
+    display: flex;
+    justify-content: center;
+}
+
+.reset-btn {
+    background-color: #1a73e8;
+    color: #fff;
+    padding: 14px 28px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.reset-btn:hover {
+    background-color: #1558b0;
+}
+
+.password-reset-help {
+    font-size: 0.9rem;
+    color: #bbb;
+    margin-top: 25px;
+}
+
+
 
 
 footer {
@@ -1121,5 +1228,32 @@ footer {
         font-size: 1.125rem;
         color: #fff;
         line-height: 1.8;
+    }
+
+    .password-reset-wrapper {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .password-reset-title {
+        font-size: 1.7rem;
+    }
+
+    .password-reset-description {
+        font-size: 0.9rem;
+    }
+
+    .form-field input {
+        font-size: 0.9rem;
+        padding: 12px;
+    }
+
+    .reset-btn {
+        padding: 12px 24px;
+        font-size: 0.95rem;
+    }
+
+    .password-reset-help {
+        font-size: 0.8rem;
     }
 }
