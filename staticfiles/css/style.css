@@ -35,7 +35,8 @@ body {
     line-height: 1.6;
     padding: 0;
     background-color: #333;
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 main {
@@ -64,11 +65,12 @@ span {
     color: #FF5733;
 }
 
+/* Basic Navbar Styling */
 /* Navbar brand styling */
 .navbar-brand {
     letter-spacing: 3px;
     transition: color 0.3s ease;
-    margin-left: 15px;
+    margin-left: 5px;
 }
 
 /* Hover effect for the brand */
@@ -82,9 +84,36 @@ span {
     transition: text-shadow 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
-/* Default nav item styling */
+/* Basic Navbar Styling */
+.navbar {
+    background-color: #333;
+    /* Dark background */
+    padding: 0.5rem 1rem;
+    /* Padding for the navbar */
+}
+
+/* Navbar links styling */
+.navbar-nav {
+    display: flex;
+    justify-content: center;
+    /* Center the links */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Center the nav items even when 'Home' link is hidden */
+.navbar-nav.mx-auto {
+    margin: 0 auto;
+    /* Ensure the navbar is centered */
+}
+
+/* Navbar item styling */
 .nav-item {
     transition: color 0.3s ease;
+    padding-left: 15px;
+    /* Adjust the padding between nav items */
+    padding-right: 15px;
 }
 
 /* Hover effect for nav items (links) */
@@ -113,6 +142,13 @@ span {
     font-weight: bold;
 }
 
+/* Make sure navbar links remain centered when Home is hidden */
+.navbar-nav {
+    display: flex;
+    justify-content: center;
+    /* Center the nav items */
+    width: 100%;
+}
 
 .wrapper {
     display: flex;
@@ -357,6 +393,19 @@ span {
     color: #ccc;
 }
 
+/* Error msg when commenting */
+.alert-container {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.alert {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
 /* Feedback Items */
 .feedback-item {
     background-color: #444;
@@ -380,6 +429,51 @@ span {
     font-size: 1.1rem;
     line-height: 1.6;
 }
+
+/* Styling for the Edit form (Initially hidden) */
+#edit-form-1 {
+    display: none;
+    margin-top: 10px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #444;
+    border: 1px solid #555;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Form Input (Textarea) Styling */
+#edit-form-1 textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #666;
+    border-radius: 8px;
+    font-size: 16px;
+    resize: vertical;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#edit-form-1 textarea:focus {
+    border-color: #6c757d;
+    box-shadow: 0 0 8px rgba(108, 117, 125, 0.5);
+}
+
+/* Label styling */
+#edit-form-1 label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #ccc;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+.btn.btn-success.btn-block {
+    margin: 0.2em;
+}
+
+
 
 /* Styles for the comment box */
 .user-comment-box {
@@ -685,6 +779,92 @@ span {
     box-shadow: 0 0 0 2px rgba(255, 87, 34, 0.5);
 }
 
+/* About Page Styling */
+.about-section1 {
+    background-color: #333;
+    /* Dark background */
+    color: #fff;
+    /* Light text for contrast */
+    padding: 60px 0;
+    padding-top: 100px;
+    /* Add padding at the top */
+}
+
+.about-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.about-header h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #f44336;
+    /* Accent color for headers */
+}
+
+.about-header p {
+    font-size: 1.25rem;
+    max-width: 800px;
+    margin: 0 auto;
+    color: white;
+    /* Slightly lighter text */
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.about-text {
+    width: 50%;
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: white;
+    /* Slightly lighter text */
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #f44336;
+    margin-bottom: 20px;
+}
+
+.about-image {
+    width: 45%;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.mission-statement {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.mission-statement h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #f44336;
+    margin-bottom: 20px;
+}
+
+.mission-statement p {
+    font-size: 1.25rem;
+    max-width: 800px;
+    margin: 0 auto;
+    color: white;
+    line-height: 1.8;
+}
+
 
 
 footer {
@@ -724,245 +904,222 @@ footer {
 
 /* Responsive Design: Smaller Screens */
 @media (max-width: 767px) {
-    @media (max-width: 767px) {
 
-        /* General layout adjustments */
-        html,
-        body {
-            height: 100%;
-            overflow-x: hidden;
-            /* Prevent horizontal scrolling */
-        }
-
-        /* Ensure no vertical scrolling if required */
-        body {
-            overflow-y: auto;
-            /* Allow vertical scrolling if needed */
-        }
-
-        /* Adjust card styling for small screens */
-        .card {
-            margin: 10px;
-            padding: 15px;
-            border: 1px solid #FF5733;
-            background-color: #333;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            flex: 1;
-            /* Make the cards more flexible */
-        }
-
-        .card-img-top {
-            width: 100px;
-            /* Smaller image size for mobile */
-            height: 100px;
-        }
-
-        .card-body {
-            padding: 10px;
-            /* Adjust padding for smaller screens */
-        }
-
-        /* Button adjustments for touch-friendliness */
-        .intro-buttons .btn {
-            width: 100%;
-            padding: 12px 0;
-            margin-top: 10px;
-        }
-
-        /* Adjust text sizes for better readability */
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            font-size: 1.5rem;
-            /* Adjust font size for small screens */
-        }
-
-        p {
-            font-size: 14px;
-            /* Slightly smaller font for paragraphs */
-        }
-
-        .trainer-intro h2 {
-            font-size: 2rem;
-        }
-
-        .trainer-intro p {
-            font-size: 1rem;
-        }
-
-        .profile-image {
-            width: 120px;
-            /* Smaller profile image */
-            height: 120px;
-        }
-
-        .card-body {
-            padding: 10px;
-        }
-
-        /* Adjust flexbox layouts for smaller screens */
-        .intro-buttons {
-            display: flex;
-            flex-direction: column;
-            /* Stack buttons vertically */
-            gap: 15px;
-        }
-
-        .card-body {
-            padding: 15px;
-        }
-
-        /* Input fields and form elements adjustments */
-        .text-box,
-        .form-select,
-        .auth-box input[type="text"],
-        .auth-box input[type="password"],
-        .auth-box input[type="email"],
-        .auth-box input[type="checkbox"] {
-            width: 100%;
-            padding: 10px;
-            font-size: 1rem;
-            border-radius: 5px;
-            background-color: #555;
-        }
-
-        /* Make form inputs full width and more touch-friendly */
-        .text-box:focus,
-        .form-select:focus,
-        .auth-box input:focus {
-            outline: none;
-            border-color: #1c8f74;
-        }
-
-        .auth-box input[type="text"],
-        .auth-box input[type="password"],
-        .auth-box input[type="email"] {
-            width: 100%;
-            padding: 12px;
-            font-size: 1rem;
-            background-color: #333;
-        }
-
-        /* Adjust button size for mobile */
-        .intro-buttons .btn-primary,
-        .intro-buttons .btn-secondary {
-            padding: 12px 20px;
-            font-size: 1.2rem;
-        }
-
-        .intro-buttons .btn-primary:hover,
-        .intro-buttons .btn-secondary:hover {
-            transform: translateY(-5px);
-            background-color: #d04e2f;
-        }
-
-        /* Video background adjustments for smaller screens */
-        .video-background {
-            position: relative;
-            width: 100%;
-            height: 50vh;
-            /* Reduced height for mobile */
-            overflow: hidden;
-        }
-
-        .my-video {
-            object-fit: cover;
-            width: 100%;
-            height: 100%;
-        }
-
-        /* Adjust h3 for smaller devices */
-        h3 {
-            font-size: 1.2rem;
-            /* Smaller heading size */
-        }
-
-        /* About section adjustments */
-        .about-section {
-            padding: 20px;
-        }
-
-        .about-section h3 {
-            font-size: 1.6rem;
-        }
-
-        .about-section p {
-            font-size: 1rem;
-        }
-
-        /* Feedback section adjustments */
-        .feedback-item {
-            padding: 15px;
-        }
-
-        .feedback-item .comment-h3 {
-            font-size: 1.6rem;
-        }
-
-        .feedback-item p {
-            font-size: 1rem;
-        }
-
-        /* Form adjustments for smaller screens */
-        .form-btn {
-            padding: 12px;
-            font-size: 1.1rem;
-        }
-
-        .form-group {
-            margin-top: 20px;
-        }
-
-        /* For the Auth container */
-        .auth-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            padding: 0 20px;
-        }
-
-        .auth-box {
-            padding: 30px 40px;
-            width: 100%;
-            max-width: 400px;
-            /* Make the auth box more compact */
-        }
-
-        /* Styling for the logout page */
-        .logout-wrapper {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            padding: 0 10px;
-        }
-
-        .logout-container {
-            padding: 30px;
-            max-width: 350px;
-        }
-
-        .logout-button {
-            padding: 12px 20px;
-            font-size: 1.1rem;
-            width: 100%;
-        }
-
-        /* Footer Adjustments */
-        footer {
-            padding: 15px 0;
-        }
-
-        .social-icons i {
-            font-size: 22px;
-            margin: 0 10px;
-        }
+    /* General layout adjustments */
+    html,
+    body {
+        height: 100%;
+        overflow-x: hidden;
+        /* Prevent horizontal scrolling */
+        padding: 0;
+        margin: 0;
     }
 
+    .video-background {
+        position: relative;
+        /* Reduced height for mobile */
+        overflow: hidden;
+    }
+
+    .my-video {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* Adjust card styling for small screens */
+    .card {
+        margin: 10px;
+        padding: 15px;
+        border: 1px solid #FF5733;
+        background-color: #333;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        flex: 1;
+        /* Make the cards more flexible */
+    }
+
+    .card-img-top {
+        width: 100px;
+        /* Smaller image size for mobile */
+        height: 100px;
+    }
+
+    .card-body {
+        padding: 10px;
+    }
+
+    /* Adjust text sizes for better readability */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-size: 1.5rem;
+        /* Adjust font size for small screens */
+    }
+
+    p {
+        font-size: 14px;
+        /* Slightly smaller font for paragraphs */
+    }
+
+    .trainer-intro h2 {
+        font-size: 2rem;
+    }
+
+    .trainer-intro p {
+        font-size: 1rem;
+    }
+
+    /* Profile Image Styling */
+    .profile-image {
+        width: 120px;
+        /* Smaller profile image */
+        height: 120px;
+    }
+
+    /* Adjust flexbox layouts for smaller screens */
+    .intro-buttons {
+        display: flex;
+        flex-direction: column;
+        /* Stack buttons vertically */
+        gap: 15px;
+    }
+
+    .intro-buttons .btn {
+        width: 100%;
+        padding: 12px 0;
+        margin-top: 10px;
+    }
+
+    .auth-container {
+        padding: 10px;
+        height: auto;
+    }
+
+    /* Adjust auth-box for smaller screens */
+    .auth-box {
+        padding: 20px;
+        width: 90%;
+        height: auto;
+    }
+
+    /* Input fields and form elements adjustments */
+    .text-box,
+    .form-select,
+    .auth-box input[type="text"],
+    .auth-box input[type="password"],
+    .auth-box input[type="email"],
+    .auth-box input[type="checkbox"] {
+        width: 100%;
+        padding: 10px;
+        font-size: 1rem;
+        border-radius: 5px;
+        background-color: #555;
+    }
+
+    /* Make form inputs full width and more touch-friendly */
+    .text-box:focus,
+    .form-select:focus,
+    .auth-box input:focus {
+        outline: none;
+        border-color: #1c8f74;
+    }
+
+    /* Adjust card layout for smaller devices */
+    .about-section,
+    .feedback-item,
+    .user-comment-box {
+        width: 100%;
+        padding: 20px;
+        margin: 10px 0;
+    }
+
+    .about-section .about-text {
+        width: 100%;
+        font-size: 1rem;
+        margin-top: 20px;
+    }
+
+    /* Adjust the footer for mobile */
+    footer {
+        padding: 15px 10px;
+        font-size: 0.9rem;
+    }
+
+    /* Adjust social icons for mobile */
+    .social-icons i {
+        font-size: 20px;
+        margin: 0 10px;
+    }
+
+    /* Adjust navbar */
+    .navbar-nav {
+        flex-direction: column;
+        padding: 0;
+        text-align: center;
+    }
+
+    .navbar-nav .nav-item {
+        padding: 8px 0;
+    }
+
+    /* Ensure large containers adjust well */
+    .wrapper {
+        display: block;
+    }
+
+    .about-section {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    .about-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .about-header p {
+        font-size: 1.125rem;
+    }
+
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        margin-top: 30px;
+    }
+
+    .about-text {
+        width: 100%;
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .about-image {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .about-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .mission-statement {
+        margin-top: 40px;
+    }
+
+    .mission-statement h2 {
+        font-size: 2rem;
+    }
+
+    .mission-statement p {
+        font-size: 1.125rem;
+        color: #fff;
+        line-height: 1.8;
+    }
 }

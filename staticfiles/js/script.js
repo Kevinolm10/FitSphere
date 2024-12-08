@@ -70,3 +70,34 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+
+function toggleEditForm(feedbackId) {
+    var form = document.getElementById('edit-form-' + feedbackId);
+    var commentText = document.getElementById('comment-text-' + feedbackId);
+
+    // Toggle visibility
+    if (form.style.display === 'none') {
+        form.style.display = 'block';
+        commentText.style.display = 'none';
+    } else {
+        form.style.display = 'none';
+        commentText.style.display = 'block';
+    }
+}
+
+
+// You can implement the saveChanges function to handle saving the form if needed
+function saveChanges(feedbackId) {
+    var form = document.getElementById('edit-form-' + feedbackId);
+    form.submit(); // This will submit the form
+}
+
+function updateComment(feedbackId, newCommentText) {
+    var commentText = document.getElementById('comment-text-' + feedbackId);
+    commentText.textContent = newCommentText; // Update the comment text
+
+    // Hide the form and show the updated comment
+    document.getElementById('edit-form-' + feedbackId).style.display = 'none';
+    commentText.style.display = 'block';
+}
