@@ -99,7 +99,7 @@ DATABASES = {
 
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-kevinolm10-fitsphere-j0gyuxgv992.ws.codeinstitute-ide.net',
-    'https://*.herokuapp.com', 
+    'https://*.herokuapp.com',
 ]
 
 

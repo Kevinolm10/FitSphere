@@ -3,15 +3,16 @@ from django_summernote.admin import SummernoteModelAdmin
 from .models import Trainer
 from .models import TrainerFeedback
 
+
 # Trainer Admin
 class TrainerAdmin(admin.ModelAdmin):
     # List of fields to display in the admin list view
     list_display = (
-        'first_name', 
-        'last_name', 
-        'age', 
-        'user', 
-        'featured_image', 
+        'first_name',
+        'last_name',
+        'age',
+        'user',
+        'featured_image',
         'created_at'
     )
 
@@ -26,11 +27,11 @@ class TrainerAdmin(admin.ModelAdmin):
 
     # Fields to display in the detail view form
     fields = (
-        'user', 
-        'first_name', 
-        'last_name', 
-        'age', 
-        'description', 
+        'user',
+        'first_name',
+        'last_name',
+        'age',
+        'description',
         'featured_image'
     )
 
@@ -47,8 +48,11 @@ class TrainerFeedbackAdmin(SummernoteModelAdmin):
     list_filter = ('trainer', 'rating')
 
     # Search fields
-    search_fields = ('user__username', 'trainer__first_name', 'trainer__last_name')
-
+    search_fields = (
+        'user__username',
+        'trainer__first_name',
+        'trainer__last_name',
+    )
     # Summernote for the comment field (rich text editor)
     summernote_fields = ('comment',)
 
@@ -57,6 +61,7 @@ class TrainerFeedbackAdmin(SummernoteModelAdmin):
 
     # Ordering feedback by created_at
     ordering = ('-created_at',)
+
 
 # Register models
 admin.site.register(Trainer, TrainerAdmin)

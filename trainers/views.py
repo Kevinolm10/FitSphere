@@ -64,11 +64,13 @@ def edit_feedback(request, feedback_id):
     feedback = get_object_or_404(TrainerFeedback, id=feedback_id)
     trainer = feedback.trainer  # Get the associated trainer
 
-    # Ensure the logged-in user is the owner of the feedback
+
     if request.user != feedback.user:
-        messages.error(request,
-"You do not have permission to edit this feedback.")
-        return redirect('trainers:trainer_profile', trainer_id=trainer.id)
+        messages.error(
+            request,
+            "You do not have permission to edit this feedback."
+        )
+        return redirect('trainers:trainer_profile', trainer_id=trainer_id)
 
     # Process the form submission (POST request)
     if request.method == 'POST':
@@ -79,8 +81,8 @@ def edit_feedback(request, feedback_id):
             return redirect('trainers:trainer_profile', trainer_id=trainer.id)
         else:
             print(form.errors)  # Log form errors for debugging
-            messages.error(request,
-"There was an error updating your feedback.")
+            messages.error(
+                request, "There was an error updating your feedback.")
             return redirect('trainers:trainer_profile', trainer_id=trainer.id)
 
     else:
