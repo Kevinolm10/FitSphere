@@ -1,12 +1,15 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<section class="video-background" role="region" aria-label="Video background showcasing fitness">
+<section class="video-background" aria-label="Video background showcasing fitness">
     <!-- Video Background -->
     <video autoplay muted loop id="my-video" aria-labelledby="video-description">
         <source src="{% static 'videos/jogging.mp4' %}" type="video/mp4">
         <p>Your browser does not support the video tag. Please consider updating your browser.</p>
     </video>
+
+    <!-- Add a description with the correct ID -->
+    <p id="video-description" class="sr-only">This is a video showing jogging exercises to improve fitness.</p>
 
     <!-- Overlay content with Bootstrap classes -->
     <div class="content position-absolute top-50 start-50 translate-middle overlay" role="contentinfo"

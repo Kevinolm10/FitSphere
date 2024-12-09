@@ -200,39 +200,51 @@ By using **Oswald**, we create a cohesive and visually appealing typography styl
 
 - The main **background video** was brought from [pixabay](https://www.pixabay.com/) this website allowed Fitsphere to get an imersive video in the main cta section.
 
-  ![Background](documentation/design/jogging.mp)
+  ![Background](documentation/design/jogging.mp4)
 
 
 
 ### Wireframes
 
-- [Desktop Wireframes](documentation/wireframes/pp4_desktop.pdf)
-- [Tablet Wireframes](documentation/wireframes/pp4_tablet.pdf)
-- [Mobile Wireframes](documentation/wireframes/pp4_mobile.pdf)
+#### Desktop
+
+- [Desktop Home](documentation/wireframes/home.png)
+- [Desktop Trainers](documentation/wireframes/trainers.png)
+- [Desktop About](documentation/wireframes/about.png)
+- [Desktop Comments](documentation/wireframes/comment-desk.png)
+- [Desktop Admin](documentation/wireframes/desktop-admin.png)
+
+#### Mobile
+
+- [Mobile Home](documentation/wireframes/phone-home.png)
+- [Mobile Trainers](documentation/wireframes/phone-trainers.png)
+- [Mobile About](documentation/wireframes/phone-about.png)
+- [Mobile Sign in](documentation/wireframes/phone-signin.png)
+- [Mobile Sign up](documentation/wireframes/phone-signup.png)
 
 
 ---
 
 ## Flowcharts
 
-This application is designed to cater to users with varying roles, each fulfilling different expectations and accessing specific functionalities. To help visualize how the entire system works and how the different roles interact with it, we have created a comprehensive **website functionality flowchart**.
+This application is designed to accommodate users with different roles, each having specific expectations and access to distinct functionalities. To provide a clearer picture of how the system operates and how various roles interact with the platform, we’ve created a detailed **website functionality flowchart**.
 
-This flowchart serves as a high-level overview of how the entire website functions, starting from the user’s initial interaction with the platform to navigating through the various sections. It outlines the core user journeys and how different elements of the system interconnect, ensuring all users, regardless of their role, can easily understand the flow of actions within the platform.
+The flowchart offers a high-level overview of the user journey across the website, beginning from the user’s first interaction with the platform to navigating the various sections. It highlights the core processes and interactions, ensuring that all users—whether they are visitors, registered users, trainers, or admins—can easily understand how actions are connected within the platform.
 
-The flowchart was created using [Draw.io](https://www.lucidchart.com/), providing a clean, easy-to-understand representation of the website’s structure and user experience. 
+The flowchart was designed using [Lucidchart](https://www.lucidchart.com/), providing a simple and intuitive representation of the website’s structure and user experience.
 
-- [Website Functionality Flowchart](documentation/flowcharts/flowchart_website_functionality.pdf)
+- [Website Functionality Flowchart](documentation/flowcharts/flowchart.png)
 
-This flowchart includes:
+### Flowchart Breakdown:
 
-- **Homepage Access**: Where users first interact with the site, whether they are logging in, signing up, or simply browsing.
-- **Role-Specific Dashboards**: After logging in, users are redirected to dashboards tailored to their roles (e.g., admin, user, trainer, etc.).
-- **Navigation**: How users can navigate between different sections, such as profile management, feedback submission, and the main features of the platform.
-- **Feedback Mechanism**: Illustrates how users can interact with trainers and leave feedback, which is central to the user experience.
+- **Homepage Interaction**: The starting point for all users, whether they are signing up, logging in, or simply exploring the site.
+- **Role-Based Dashboards**: After logging in, users are directed to personalized dashboards depending on their roles (e.g., admin, user, trainer, etc.), each with access to role-specific functionalities.
+- **Navigation Paths**: A depiction of how users navigate between different sections of the website, such as their profile management, feedback forms, trainer pages, and other key features.
+- **Trainer Feedback System**: Shows how users (signed in) can rate and leave feedback on trainers, as well as edit or delete their comments. This feedback mechanism is central to user interactions with the platform.
 
-This flowchart is intended to give a clear picture of the core processes that drive the platform and how users can seamlessly interact with different features based on their role.
+The flowchart aims to provide a comprehensive view of the essential processes that power the website, offering insight into how users can efficiently engage with the platform’s features, based on their role.
 
-Each flowchart is designed to provide clarity on the user’s journey, ensuring all stakeholders understand the processes that guide interactions with the system.
+Each flowchart is designed to clarify the user's journey through the website, ensuring that all stakeholders—be it developers, administrators, or users—fully understand the steps involved in interacting with the system.
 
 
 ---
@@ -247,7 +259,7 @@ Each flowchart is designed to provide clarity on the user’s journey, ensuring 
 
 * The ERD was created using [Draw.io](https://www.lucidchart.com/).
 
-- [Database Scheme](documentation/diagrams/db_final.pdf)
+- [Database Scheme](documentation/diagrams/er-diagram.png)
 
 ---
 ## Testing
