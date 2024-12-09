@@ -272,6 +272,7 @@ Please refer to the [DEPLOYMENT.md](DEPLOYMENT.md) file for all deployment-relat
 - I would also like to add more detail to the comments.
 - Optimization is important and is one thing i would have liked to do. The css file needs cleaning and optimizing as well as the javascript file and all images/videos.
 - I would like to add some more value to the user and trainer.
+- Big note on the error pages, which i had no time left to style properly. This is a key point to do.
 
 ---
 

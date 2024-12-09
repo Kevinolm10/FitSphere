@@ -1,8 +1,3 @@
-
-Here’s your Deployment Guide in proper Markdown format:
-
-markdown
-Copy code
 # Deployment
 
 - The app was deployed to [Heroku](https://www.heroku.com/).
