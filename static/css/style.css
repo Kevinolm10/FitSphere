@@ -972,6 +972,70 @@ span {
 }
 
 
+/* Global styling for error pages */
+.error {
+    display: flex;
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+    height: 100vh;
+    /* Full viewport height */
+    background-color: #f9f9f9;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    /* To include padding in the height calculation */
+}
+
+.error__content {
+    max-width: 600px;
+    width: 100%;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.error__title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.error__image {
+    margin-bottom: 20px;
+}
+
+.error__image i {
+    color: #ff5c5c;
+    /* Color for error icon */
+}
+
+.error__message {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.error__actions {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.error__actions a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
 
 
 footer {

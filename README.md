@@ -10,9 +10,10 @@ This website is devloped by [Kevin Ölmheden] (https://github.com/Kevinolm10)
 
 ## About
 
-[FitSphere] (https://fitsphere-5231c1c191f7.herokuapp.com/) FitSphere is a platform dedicated to connecting users with certified personal trainers for customized fitness guidance. Whether you're looking for expert advice, personalized workout plans, or motivational support, FitSphere offers a diverse range of trainers to suit your fitness goals. Users can browse trainer profiles, book sessions, and leave feedback to help others make informed choices. Additionally, FitSphere provides companies the ability to hire and onboard qualified trainers, expanding their team to meet growing client demands. Join FitSphere today and take the next step toward achieving your fitness aspirations with the right support!
+[FitSphere] (https://fitsphere-5231c1c191f7.herokuapp.com/) FitSphere is a platform dedicated to connecting users with certified personal trainers for customized fitness guidance. Whether you're looking for expert advice, personalized workout plans, or motivational support, FitSphere offers a diverse range of trainers to suit your fitness goals. Users can browse trainer profiles and leave feedback to help others make informed choices. Additionally, FitSphere provides companies the ability to hire and onboard qualified trainers, expanding their team to meet growing client demands. Join FitSphere today and take the next step toward achieving your fitness aspirations with the right support!
 
-
+The role of the superuser is vital for the trainers to be onboarded, comments and ratings to be managed and users to be managed as well.
+We as a company create the trainers and manages the rest to simplify everything for our audience!
 
 
 ## User Experience Design
@@ -90,16 +91,15 @@ The user experience (UX) design strategy for FitSphere focuses on creating an in
 
 | Issue ID    | User Story |
 |-------------|-------------|
-|[#5](https://github.com/Kevinolm10/FitSphere/issues/3)|As a trainer, I can capability so that leave comments and rate trainers so that I can share my feedback about their profiles.|
-|[#6](https://github.com/Kevinolm10/FitSphere/issues/11)|As a trainer, I can View user feedback so that so i know how im doing and what i can do better.|
+|[#7](https://github.com/Kevinolm10/FitSphere/issues/11)|As a trainer, I can View user feedback so that so i know how im doing and what i can do better.|
 
 
 #### **Admin Goals**
 
 | Issue ID    | User Story |
 |-------------|-------------|
-|[#7](https://github.com/Kevinolm10/FitSphere/issues/7)|As an admin, I can log into the admin panel so that **I can manage the site’s content and users.|
-|[#8](https://github.com/Kevinolm10/FitSphere/issues/9)|As an admin, I can manage trainer profiles so that **I can ensure the information is accurate and up-to-date.|
+|[#8](https://github.com/Kevinolm10/FitSphere/issues/7)|As an admin, I can log into the admin panel so that **I can manage the site’s content and users.|
+|[#9](https://github.com/Kevinolm10/FitSphere/issues/9)|As an admin, I can manage trainer profiles so that **I can ensure the information is accurate and up-to-date.|
 ---
 
 ## Technologies used
@@ -118,7 +118,7 @@ The user experience (UX) design strategy for FitSphere focuses on creating an in
 
 - ### Databases:
 
-    + [SQLite](https://www.sqlite.org/): was used as a development database.
+    + [SQLite](https://www.sqlite.org/): was installed but not used during development. It was active and pushed to github, but later removed as it was a misstake. It should have been put in Gitignore. I will keep that in mind til future projects.
     + [PostgreSQL](https://www.postgresql.org/): the database used to store all the data.
 
 - ### Other tools:
@@ -174,26 +174,11 @@ By combining these elements, **FitSphere** ensures a modern, functional, and vis
 
 ### Typography
 
-For **FitSphere**, we have selected the **Oswald** font to ensure a modern, bold, and clean aesthetic throughout the application. Oswald’s distinctive and clear character design enhances readability and supports the overall user experience, making content easy to consume. The font choice complements our minimalist design and pairs well with the application’s color scheme.
+Oswald is used for all headings and key elements throughout the app. Its bold, clean, and slightly condensed design makes it perfect for drawing attention to titles, subheadings, and important action items. The distinct character of Oswald ensures strong readability, helping users quickly navigate and focus on key sections of the interface.
 
-Here’s a quick look at different weights of the **Oswald** font:
+For body text, we use Lora, a serif font known for its readability and elegance. Lora offers a comfortable reading experience for longer text, balancing the boldness of Oswald with its warm, inviting style. This combination ensures that both short and long content is easy to consume, providing a visually appealing contrast.
 
-- **Regular (400 weight)**: The base weight for standard text, ensuring readability without distraction.
-  
-  ![Typography](documentation/design/oswald_400.png)
-
-- **Medium (700 weight)**: Used to emphasize important elements, such as buttons or headings, providing a stronger visual hierarchy.
-
-  ![Typography](documentation/design/oswald_700.png)
-
-- **Bold (900 weight)**: Used for key emphasis, making certain elements stand out, such as titles, subheadings, and critical call-to-actions.
-
-  ![Typography](documentation/design/oswald_900.png)
-
-To highlight the most important content, the font weight is set to **900**. For action-oriented items like buttons, the weight is **700** to give them prominence. For the rest of the text, a **400** weight is used to maintain balance and ensure a clean, easy-to-read experience for the user.
-
-By using **Oswald**, we create a cohesive and visually appealing typography style that enhances user interaction and strengthens the overall design of **FitSphere**.
-
+By pairing the modern, bold Oswald for headings with the elegant, readable Lora for body text, we create a typography system that is both functional and visually engaging. This balance enhances the user experience, guiding users through content while keeping the design clean and accessible.
 
 
 ### Imagery
@@ -238,7 +223,6 @@ The flowchart was designed using [Lucidchart](https://www.lucidchart.com/), prov
 ### Flowchart Breakdown:
 
 - **Homepage Interaction**: The starting point for all users, whether they are signing up, logging in, or simply exploring the site.
-- **Role-Based Dashboards**: After logging in, users are directed to personalized dashboards depending on their roles (e.g., admin, user, trainer, etc.), each with access to role-specific functionalities.
 - **Navigation Paths**: A depiction of how users navigate between different sections of the website, such as their profile management, feedback forms, trainer pages, and other key features.
 - **Trainer Feedback System**: Shows how users (signed in) can rate and leave feedback on trainers, as well as edit or delete their comments. This feedback mechanism is central to user interactions with the platform.
 
@@ -257,7 +241,9 @@ Each flowchart is designed to clarify the user's journey through the website, en
 
 ### Data Modeling
 
-* The ERD was created using [Draw.io](https://www.lucidchart.com/).
+* The ERD was created using [Lucidchart](https://www.lucidchart.com/).
+
+- As a point for health blog, it was meant to be. The health blog was kept in the database Scheme for the future as it is still an issue for the future in the project.
 
 - [Database Scheme](documentation/diagrams/er-diagram.png)
 
@@ -265,8 +251,6 @@ Each flowchart is designed to clarify the user's journey through the website, en
 ## Testing
 
 Please refer to the [TESTING.md](TESTING.md) file for all test-related documentation.
-
-
 
 ---
 
@@ -278,6 +262,16 @@ Please refer to the [TESTING.md](TESTING.md) file for all test-related documenta
 
 Please refer to the [DEPLOYMENT.md](DEPLOYMENT.md) file for all deployment-related documentation.
 
+---
+
+## Future Improvements
+
+- In the future i would like for it to be more content implemented for the user. 
+- The password reset must be finished as well as a more robust system to handle authentication.
+- The admin panel should be more custom to handle all of this.
+- I would also like to add more detail to the comments.
+- Optimization is important and is one thing i would have liked to do. The css file needs cleaning and optimizing as well as the javascript file and all images/videos.
+- I would like to add some more value to the user and trainer.
 
 ---
 
@@ -285,8 +279,8 @@ Please refer to the [DEPLOYMENT.md](DEPLOYMENT.md) file for all deployment-relat
 
 - [GitHub](https://github.com/) for giving the idea of the project's design.
 - [Django](https://www.djangoproject.com/) for the framework.
-- [Heroku](https://www.heroku.com/): for the free hosting of the website.
-- [ElephantSQL](https://www.elephantsql.com/): for the free hosting of the database.
+- [Heroku](https://www.heroku.com/): for the hosting of the website.
+- [PostgreSQL]: Code institute provided the database.
 - [pixabay](https://www.bgjar.com/): for the free access to the imagery and videos.
 - [Font awesome](https://fontawesome.com/): for the free access to icons.
 - [Heroku](https://www.heroku.com/): for the free hosting of the website.

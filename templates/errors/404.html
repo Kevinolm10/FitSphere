@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_title %}404 Error - Page Not Found{% endblock %}
+
+{% block content %}
+<section class="error">
+    <h2 class="error__title">
+        <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+        Oops! Page Not Found (404)
+    </h2>
+
+    <div class="error__image">
+        <i class="fa fa-exclamation-circle fa-5x" aria-hidden="true"></i>
+    </div>
+
+    <p>Sorry, the page you're looking for doesn't exist or has been moved. But don’t worry, you can get back on track
+        easily!</p>
+
+    <div class="error__actions">
+        <p>Here are some helpful links to guide you:</p>
+        <ul>
+            <li><a href="{% url 'index' %}" aria-label="Go to Home page" class="btn btn--primary">Back to Home</a></li>
+            <li><a href="{% url 'trainers' %}" aria-label="Go to Trainer list" class="btn btn--secondary">Browse
+                    Trainers</a></li>
+            <li><a href="{% url 'about:about' %}" aria-label="Go to about page" class="btn btn--secondary">about Us</a>
+        </ul>
+    </div>
+
+    {% if request.user.is_authenticated %}
+    <div class="error__user-actions">
+        <p>As a logged-in user, you can go back to your profile:</p>
+        <a href="{% url 'user_profile' username=request.user.username %}" class="btn account__btn"
+            aria-label="Go to Profile page">My Profile</a>
+    </div>
+    {% else %}
+    <p>Don’t have an account yet? <a href="{% url 'signup' %}" class="link">Sign up</a> to join us!</p>
+    {% endif %}
+</section>
+{% endblock %}

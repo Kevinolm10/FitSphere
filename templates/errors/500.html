@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_title %}500 Error - Internal Server Error{% endblock %}
+
+{% block content %}
+<section class="error">
+    <h2 class="error__title">
+        <i class="fa fa-server" aria-hidden="true"></i>
+        Oops! Something Went Wrong (500)
+    </h2>
+
+    <div class="error__image">
+        <i class="fa fa-server fa-5x" aria-hidden="true"></i>
+    </div>
+
+    <p>We’re sorry, but something went wrong on our side. Our team has been notified and will resolve the issue as soon
+        as possible.</p>
+
+    <div class="error__actions">
+        <p>In the meantime, here are some helpful links:</p>
+        <ul>
+            <li><a href="{% url 'index' %}" aria-label="Go to Home page" class="btn btn--primary">Back to Home</a></li>
+            <li><a href="{% url 'about:about' %}" aria-label="Go to about page" class="btn btn--secondary">about Us</a>
+            </li>
+        </ul>
+    </div>
+</section>
+{% endblock %}
