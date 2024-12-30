@@ -20,7 +20,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
 '8000-kevinolm10-fitsphere-3130l5o6hi1.ws.codeinstitute-ide.net',
-'.herokuapp.com'
+'.herokuapp.com',
 ]
 
 
