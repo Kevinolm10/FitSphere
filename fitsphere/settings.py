@@ -19,7 +19,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = False
 
 ALLOWED_HOSTS = [
-'8000-kevinolm10-fitsphere-j0gyuxgv992.ws.codeinstitute-ide.net',
+'8000-kevinolm10-fitsphere-3130l5o6hi1.ws.codeinstitute-ide.net',
 '.herokuapp.com'
 ]
 
@@ -98,8 +98,8 @@ DATABASES = {
 }
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-kevinolm10-fitsphere-j0gyuxgv992.ws.codeinstitute-ide.net',
-    'https://*.herokuapp.com',
+    'https://8000-kevinolm10-fitsphere-3130l5o6hi1.ws.codeinstitute-ide.net',
+    'https://*.herokuapp.com', 
 ]
 
 
