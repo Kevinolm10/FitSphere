@@ -16,7 +16,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
 '8000-kevinolm10-fitsphere-3130l5o6hi1.ws.codeinstitute-ide.net',
@@ -99,7 +99,7 @@ DATABASES = {
 
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-kevinolm10-fitsphere-3130l5o6hi1.ws.codeinstitute-ide.net',
-    'https://*.herokuapp.com', 
+    'https://*.herokuapp.com',
 ]
 
 
